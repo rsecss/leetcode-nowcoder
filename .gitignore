@@ -1,0 +1,11 @@
+#windows
+Thumbs.db
+ethumbs.db
+
+#C
+.obj
+.hex
+.o
+
+#My Configurations:
+!.gitignore
