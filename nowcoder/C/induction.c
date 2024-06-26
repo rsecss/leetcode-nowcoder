@@ -650,7 +650,7 @@ int main()
     }
 
     //快排——调用库函数
-    qsort(arr, n, 4,compare_int);
+    qsort(arr, n, 4,compare_int);   //升序
 
     //输出
     for(int i =n-1;i>=n-5;i--)
@@ -663,6 +663,7 @@ int main()
 //BC40 竞选社长
 #include <stdio.h>
 
+//方法一
 int main()
 {
     char buffer[100]={0};
@@ -696,6 +697,396 @@ int main()
     else 
     {
         printf("E\n");
+    }
+
+    return 0;
+}
+
+//方法二
+
+int main()
+{
+    char buffer[100]={0};
+    //输入
+    gets(buffer);
+    //统计
+    int flag = 0;
+    int i =0;
+    while (buffer[i] != '0') 
+    {
+        if(buffer[i] == 'A')
+        {
+            flag++;
+        }
+        if(buffer[i] == 'B')
+        {
+            flag--;
+        }
+        i++;
+    }
+    //输出
+    if(flag>0)
+    {
+        printf("A\n");
+    }
+    else if(flag<0)
+    {
+        printf("B\n");
+    }
+    else 
+    {
+        printf("E\n");
+    }
+
+    return 0;
+}
+
+//方法三
+#include <stdio.h>
+
+int main()
+{
+    //输入并统计
+    int ch = 0;
+    int flag = 0;
+    while ((ch = getchar()) != '0' && ch != EOF) 
+    {
+        if(ch == 'A')
+        {
+            flag++;
+        }
+        if(ch == 'B')
+        {
+            flag--;
+        }
+    }
+
+    //输出
+    if(flag>0)
+    {
+        printf("A\n");
+    }
+    else if(flag<0)
+    {
+        printf("B\n");
+    }
+    else 
+    {
+        printf("E\n");
+    }
+
+    return 0;
+}
+
+//BC41 你是天才吗？
+#include <stdio.h>
+
+//方法一
+int main()
+{
+    int IQ = 0;
+    while (scanf("%d",&IQ) != EOF) //EOF是-1
+    {
+        if(IQ >= 140)
+        {
+            printf("Genius\n");
+        }
+    }
+
+    return 0;
+}
+
+//方法二
+int main()
+{
+    int IQ = 0;
+    while (~scanf("%d",&IQ)) //~按位取反
+    {
+        if(IQ >= 140)
+        {
+            printf("Genius\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC42 完美成绩
+#include <stdio.h>
+
+int main()
+{
+    int score = 0;
+    while(scanf("%d",&score) != EOF)
+    {
+        if(score >= 90 && score <= 100)
+        {
+            printf("Perfect\n");
+        }
+    }
+    return 0;
+}
+
+//BC43 及格分数
+#include <stdio.h>
+
+int main()
+{
+    int score = 0;
+    while(scanf("%d",&score) != EOF)
+    {
+        if(score >= 60)
+        {
+            printf("Pass\n");
+        }
+        else 
+        {
+            printf("Fail\n");
+        }
+    }
+}
+
+//BC44 判断整数奇偶性
+#include <stdio.h>
+
+int main()
+{
+    int number = 0;
+    while (scanf("%d\n",&number) != EOF) 
+    {
+        if(number%2)
+        {
+            printf("Odd\n");
+        }
+        else 
+        {
+            printf("Even\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC45 最高分数
+#include <stdio.h>
+
+//方法一
+void compare(int x,int y ,int z)
+{
+    int max = x>y?x:y;
+    max = max>z?max:z;
+
+    printf("%d\n",max);
+}
+
+int main()
+{
+    int x,y,z;
+    //输入
+    scanf("%d %d %d",&x,&y,&z);
+    //比较和输出
+    compare(x,y,z);
+
+    return 0;
+}
+
+//方法二
+#include <stdio.h>
+
+int main()
+{
+    int max = 0;
+    int number[3] = {0};
+    //输入
+    scanf("%d %d %d",&number[0],&number[1],&number[2]);
+    //比较
+    for(int i =0; i<3;i++)
+    {
+        if(number[i]>max)
+        {
+            max = number[i];
+        }
+    }
+    //输出
+    printf("%d\n",max);
+
+    return 0;
+}
+
+//BC46 判断是元音还是辅音
+#include <stdio.h>
+
+//方法一
+int main()
+{
+    char letter =0;
+    char array[] ="AaEeIiOoUu"; //存放元音字母的数组
+    //输入
+    while((letter=getchar()) != EOF)
+    {
+        //判断
+        int i =0;
+        for(i =0; i<10;i++)
+        {
+            if(letter == array[i])
+            {
+                printf("Vowel\n");
+                break;
+            }
+        }
+        if(i == 10)
+        {
+            printf("Consonant\n");
+        }
+
+        //处理\n
+        getchar();
+    }
+
+    return 0;
+}
+
+//方法二
+int main()
+{
+    char letter =0;
+    char array[] ="AaEeIiOoUu"; //存放元音字母的数组
+    //输入
+    while((letter=getchar()) != EOF)
+    {
+        //判断
+        int i =0;
+        for(i =0; i<10;i++)
+        {
+            if(letter == array[i])
+            {
+                printf("Vowel\n");
+                break;
+            }
+        }
+        if(i == 10)
+        {
+            printf("Consonant\n");
+        }
+
+        //处理\n
+        getchar();
+    }
+
+    return 0;
+}
+
+//BC47 判断是不是字母
+//方法一
+#include <stdio.h>
+
+int main()
+{
+    char ch  = 0;
+    while(scanf("%c\n",&ch) != EOF)
+    {
+        if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'))
+        {
+            printf("%c is an alphabet.\n",ch);
+        }
+        else 
+        {
+            printf("%c is not an alphabet.\n",ch);
+        }
+    }
+
+    return 0;
+}
+
+//方法二
+#include <ctype.h>
+#include <stdio.h>
+
+int main()
+{
+    char ch  = 0;
+    while(scanf("%c\n",&ch) != EOF)
+    {
+        if(isalpha(ch))//isalpha判断字符是否为字母
+        {
+            printf("%c is an alphabet.\n",ch);
+        }
+        else 
+        {
+            printf("%c is not an alphabet.\n",ch);
+        }
+    }
+
+    return 0;
+}
+
+//BC48 字母大小写转换
+#include <stdio.h>
+
+//方法一
+int main()
+{
+    char ch = 0;
+    while(scanf("%c\n",&ch) != EOF)
+    {
+        if (ch >= 'A' && ch <= 'Z') 
+        {
+            printf("%c\n",ch+32);
+        }
+        else if(ch >= 'a' && ch <= 'z')
+        {
+            printf("%c\n",ch-32);
+        }
+    }
+
+    return 0;
+}
+
+//方法二
+#include <ctype.h>
+#include <stdio.h>
+
+int main()
+{
+    char ch = 0;
+    while(scanf("%c\n",&ch) != EOF)
+    {
+        if (isupper(ch)) 
+        {
+            printf("%c\n",ch+32);
+        }
+        else if(islower(ch))
+        {
+            printf("%c\n",ch-32);
+        }
+    }
+
+    return 0;
+}
+
+//方法三
+#include <ctype.h>
+#include <stdio.h>
+
+/**
+ * isupper -判断字符是否为大写字母
+ * islower -判断字符是否为小写字母
+ * tolower -将字符转换为小写字母
+ * toupper -将字符转换为大写字母
+ */ 
+int main()
+{
+    int ch = 0;
+    while(scanf("%c\n",&ch) != EOF)
+    {
+        if (isupper(ch)) 
+        {
+            printf("%c\n",tolower(ch));
+        }
+        else if(islower(ch))
+        {
+            printf("%c\n",toupper(ch));
+        }
     }
 
     return 0;
