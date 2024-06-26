@@ -436,3 +436,267 @@ int main()
 
     return 0;
 }
+
+//BC23 时间转换
+#include <stdio.h>
+
+int main() 
+{
+    //输入
+    int sec = 0;
+    int hour = 0;
+    int minute = 0;
+    int second = 0;
+    scanf("%d",&sec);
+    //计算
+    hour = sec/60/60;
+    minute =sec/60%60;
+    second = sec%60; 
+    //输出    
+    printf("%d %d %d\n",hour,minute,second);
+    
+    return 0;
+}
+
+//BC24 总成绩和平均分计算
+#include <stdio.h>
+
+int main()
+{
+    double a, b, c;
+    // 输入
+    scanf("%lf %lf %lf", &a, &b, &c);
+    // 计算
+    double sum = a + b + c;
+    double average = sum / 3;
+    // 输出
+    printf("%.2lf %.2lf", sum, average);
+
+    return 0;
+}
+
+//BC30 KiKi和酸奶
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    int h = 0;
+    int m = 0;
+    // 输入
+    while (scanf("%d %d %d", &n, &h, &m) != EOF)
+    {
+        // 计算和输出
+        if (m % h)
+        {
+            printf("%d\n", n - m / h - 1);
+        }
+        else
+        {
+            printf("%d\n", n - m / h);
+        }
+    }
+
+    return 0;
+}
+
+//BC32 输出学生信息
+#include <stdio.h>
+
+int main() 
+{
+    printf("Name    Age    Gender\n");
+    printf("---------------------\n");
+    printf("Jack    18     man");
+    return 0;
+}
+
+//BC33 计算平均成绩
+#include <stdio.h>
+
+int main() 
+{
+    int number[5] ={ 0 };
+    //输入
+    for(int i=0; i<5; i++)
+    {
+        scanf("%d ",&number[i]);
+    }
+    //计算
+    int sum = 0;
+    for(int i = 0; i<5; i++)
+    {
+        sum += number[i];
+    }
+    //输出
+    printf("%.1lf",sum/5.0);
+
+    return 0;
+}
+
+//BC34 进制A+B
+#include <stdio.h>
+
+int main() 
+{
+    int a,b;
+    //输入
+    scanf("%x %o",&a,&b);
+    int sum = a+b;
+    //输出
+    printf("%d\n",sum);
+    return 0;
+}
+
+//BC37 网购
+#include <stdio.h>
+
+int main()
+{
+    double price = 0.0;
+    int month = 0;
+    int day = 0;
+    int flag = 0;
+
+    //输入
+    scanf("%lf %d %d %d",&price,&month,&day,&flag);
+    //计算
+    /*双十一*/
+    if(month == 11 && day == 11)
+    {
+        price *= 0.7;
+        if(flag == 1)
+        {
+            price -= 50; 
+        }
+    }
+    else if(month == 12 && day == 12)
+    {
+        price *= 0.8;
+        if(flag == 1)
+        {
+            price -= 50; 
+        }
+    }
+
+    if(price < 0.0)
+    {
+        printf("%.2lf\n",0.0);
+    }
+    else 
+    {
+        printf("%.2lf\n",price);
+    }
+    
+}
+
+//BC39 争夺前五名
+#include <stdio.h>
+
+//方法名
+int main()
+{
+    int n;
+    int arr[50] = {0};
+
+    //输入
+    scanf("%d\n",&n);
+    for(int i = 0; i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+
+    //冒泡排序——升序
+    for(int i =0; i<n-1;i++)//趟数
+    {
+        for(int j =0; j<n-1-i;j++)
+        {
+            if(arr[j] >arr[j+1])
+            {
+                int tmp =arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp;
+            }
+        }
+    }
+
+    //输出
+    for(int i =n-1;i>=n-5;i--)
+    {
+        printf("%d ",arr[i]);
+    }
+    return 0;
+}
+
+//方法二
+#include <stdio.h>
+#include <stdlib.h>
+
+int compare_int(const void* e1,const void* e2)
+{
+    return *(int*)e1 - *(int*)e2;
+}
+
+int main()
+{
+    int n;
+    int arr[50] = {0};
+
+    //输入
+    scanf("%d\n",&n);
+    for(int i = 0; i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+
+    //快排——调用库函数
+    qsort(arr, n, 4,compare_int);
+
+    //输出
+    for(int i =n-1;i>=n-5;i--)
+    {
+        printf("%d ",arr[i]);
+    }
+    return 0;
+}
+
+//BC40 竞选社长
+#include <stdio.h>
+
+int main()
+{
+    char buffer[100]={0};
+    //输入
+    gets(buffer);
+    //统计
+    int count_a = 0;
+    int count_b = 0;
+    int i =0;
+    while (buffer[i] != '0') 
+    {
+        if(buffer[i] == 'A')
+        {
+            count_a++;
+        }
+        if(buffer[i] == 'B')
+        {
+            count_b++;
+        }
+        i++;
+    }
+    //输出
+    if(count_a > count_b)
+    {
+        printf("A\n");
+    }
+    else if(count_a <count_b)
+    {
+        printf("B\n");
+    }
+    else 
+    {
+        printf("E\n");
+    }
+
+    return 0;
+}
