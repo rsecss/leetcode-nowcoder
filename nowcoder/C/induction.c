@@ -1091,3 +1091,277 @@ int main()
 
     return 0;
 }
+
+//BC50 计算单位阶跃函数
+#include <stdio.h>
+
+int main()
+{
+    int t = 0;
+    while (scanf("%d",&t) != EOF) 
+    {
+        if(t>0)
+        {
+            printf("%d\n",1);
+        }
+        else if(t == 0)
+        {
+            printf("%.1f\n",0.5);
+        }
+        else 
+        {
+            printf("%d\n",0);
+        }
+    }
+
+    return 0;
+}
+//BC51 三角形判断
+#include <stdio.h>
+
+int main()
+{
+    int a,b,c;
+    //输入
+    while(scanf("%d %d %d",&a,&b,&c) != EOF)
+    {   
+        //判断是否为三角形
+        if((a+b>c) && (a+c>b) && (b+c>a))
+        {
+            //如果是三角形
+            if(a == b && b == c)//等边
+            {
+                printf("Equilateral triangle!\n");
+            }
+            else if((a == b && a!=c && b!=c) || (a == c && a!=b && c!=b) || (b == c && b!=a && c!=a))//等腰
+            {
+                printf("Isosceles triangle!\n");
+            }
+            else //普通三角形
+            {
+                printf("Ordinary triangle!\n");
+            }
+        }
+        else 
+        {
+            printf("Not a triangle!\n");
+        }
+    }
+}    
+
+//BC52 衡量人体胖瘦程度
+#include <stdio.h>
+
+int main()
+{
+    double bmi = 0.0;
+    int weight = 0;
+    int high = 0;
+    //输入
+    while (scanf("%d %d",&weight,&high) != EOF) 
+    {
+        //输出BMI
+        bmi = weight/((high/100.0)*(high/100.0));
+
+        //分类
+        if(bmi < 18.5)
+        {
+            printf("Underweight\n");
+        }
+        else if (bmi >= 18.5 && bmi <= 23.9) 
+        {
+            printf("Normal\n");
+        }
+        else if (bmi > 23.9 && bmi <=27.9) 
+        {
+            printf("Overweight\n");
+        }
+        else 
+        {
+            printf("Obese\n");
+        }
+
+    }
+    return 0;
+}
+
+//BC53 计算一元二次方程
+#include <math.h>
+#include <stdio.h>
+
+int main()
+{
+    double a=0.0,b=0.0,c=0.0;
+    //输入
+    while(scanf("%lf %lf %lf",&a,&b,&c) != EOF)
+    {
+        if(a == 0)
+        {
+            printf("Not quadratic equation\n");
+        }
+        else 
+        {
+            double disc = b*b-4*a*c;
+            if(disc == 0)
+            {
+                 //有两个相等的实根
+                double mp = -b + sqrt(disc);
+                if(mp == 0)
+                {
+                    printf("x1=x2=%.2lf\n",mp);
+                }
+                else 
+                {
+                    printf("x1=x2=%.2lf\n",(-b+sqrt(disc))/(2.0*a));
+                }
+            }
+            else if(disc > 0)
+            {
+                //有两个不相等的实根
+                printf("x1=%.2lf;x2=%.2lf\n",
+                (-b-sqrt(disc))/(2.0*a),(-b+sqrt(disc))/(2.0*a));
+            }
+            else 
+            {
+                //有两个虚根
+                double real = (-b)/(2*a);
+                double image = sqrt(-disc)/(2*a);
+                printf("x1=%.2lf-%.2lfi;x2=%.2lf+%.2lfi\n",
+                        real,image,real,image);                
+            }
+        }
+    }
+
+    return 0;
+}
+
+//BC54 获得月份天数
+#include <stdio.h>
+
+int main()
+{
+    int year = 0;
+    int month = 0;
+    int days[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
+
+    //输入
+    while (scanf("%d %d",&year,&month) != EOF) 
+    {
+        int day = days[month-1];
+        //判断是否为闰年
+        if((year%4 == 0 && year%100 != 0) || (year % 400 == 0))
+        {
+            if(month == 2)
+            {
+                day += 1;
+            }
+        }
+        printf("%d\n",day);
+    }
+}
+
+//BC55 简单计算器
+#include <stdio.h>
+
+int main()
+{
+    double a,b;
+    char operator = 0;
+
+    //输入
+    scanf("%lf%c%lf",&a,&operator,&b);
+    //选择
+    switch (operator) 
+    {
+        case '+':
+            printf("%.4lf+%.4lf=%.4lf\n",a,b,a+b);
+            break;
+        case '-':
+            printf("%.4lf-%.4lf=%.4lf\n",a,b,a-b);
+            break;
+        case '*':
+            printf("%.4lf*%.4lf=%.4lf\n",a,b,a*b);
+            break;
+        case '/':
+            if(b == 0.0)
+            {
+                printf("Wrong!Division by zero!\n");    
+            }
+            else 
+            {
+                printf("%.4lf/%.4lf=%.4lf\n",a,b,a/b);
+            }
+            break;
+        default:
+            printf("Invalid operation!\n");
+            break;
+    }
+
+    return 0;
+}
+
+//BC56 线段图案
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    //输入
+    while(scanf("%d",&n) != EOF)
+    {
+        for(int i =0; i<n; i++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+
+//BC57 正方形图案
+#include <stdio.h>
+
+int main()
+{
+    int n = 0 ;
+    //输入
+    while (scanf("%d",&n) != EOF) 
+    {
+        //行
+        for(int i =0; i<n; i++)
+        {
+            //列
+            for(int j = 0; j<n; j++)
+            {
+                printf("* ");
+            }
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC58 直角三角形图案
+#include <stdio.h>
+
+int main() 
+{
+    int n = 0 ;
+    //输入
+    while (scanf("%d",&n) != EOF) 
+    {    
+        //控制行
+        for(int i = 0; i < n; i++)
+        {
+            //打印一行
+            for(int j = 0; j<=i;j++)
+            {
+                printf("* ");
+            }
+            printf("\n");
+        }   
+    }
+    return 0;
+}
