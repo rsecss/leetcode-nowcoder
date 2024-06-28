@@ -1365,3 +1365,239 @@ int main()
     }
     return 0;
 }
+
+//BC59 翻转直角三角形图案
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+
+    while (scanf("%d", &n) != EOF)
+    {
+        for (int i = n; i > 0; i--)
+        {
+            for (int j = i; j > 0; j--)
+            {
+                printf("* ");
+            }
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC60 带空格直角三角形图案
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+
+    while(scanf("%d",&n) != EOF)
+    {
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < n-i-1;j++)
+            {
+                printf("  ");//打印两个空格
+            }
+
+            for(int k = 0; k <= i; k++)
+            {
+                printf("* ");//打印*和空格
+            }
+            printf("\n");
+
+        }
+    }
+
+    return 0;
+}
+
+//BC61 金字塔图案
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+
+    while (scanf("%d",&n) != EOF) 
+    {
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < n-i-1; j++)
+            {
+                printf(" ");//打印一个空格
+            }
+
+            for(int k = 0; k <= i; k++)
+            {
+                printf("* ");
+            }
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC62 翻转金字塔图案
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+
+    while (scanf("%d",&n) != EOF) 
+    {
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < i ; j++)
+            {
+                printf(" ");
+            }
+
+            for(int k = 0; k < n-i; k++)
+            {
+                printf("* ");
+            }
+            
+            printf("\n");
+        }
+    }
+}
+
+//BC63 菱形图案
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+
+    while(scanf("%d",&n) != EOF)
+    {
+        //打印上半部分
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < n-i; j++)
+            {
+                printf(" ");
+            }
+
+            for(int k = 0; k <= i; k++)
+            {
+                printf("* ");
+            }
+
+            printf("\n");
+        }
+
+        //打印下半部分
+        for(int i = 0; i < n+1; i++)
+        {
+            for(int j = 0; j < i; j++)
+            {
+                printf(" ");
+            }
+
+            for(int k = 0; k < n-i+1; k++)
+            {
+                printf("* ");
+            }
+
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC64 K形图案
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+
+    while(scanf("%d",&n) != EOF)
+    {
+        //上半部分
+        for(int i = 0; i < n+1; i++)
+        {
+            for(int j = 0; j < n+1-i; j++)
+            {
+                printf("* ");
+            }
+
+            printf("\n");
+        }
+
+        //下半部分
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < i+2; j++)
+            {
+                printf("* ");
+            }
+
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC65 箭形图案
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+
+    while (scanf("%d", &n) != EOF)
+    {
+        /*上半部分*/
+        //控制行数
+        for (int i = 0; i < n; i++)
+        {
+            /*控制每一行*/
+            //输出空格
+            for (int j = n; j > i; j--)
+            {
+                printf("  ");
+            }
+
+            //输出*
+            for (int k = 0; k <= i; k++)
+            {
+                printf("*");
+            }
+
+            printf("\n");
+        }
+
+        /*下半部分*/
+        //控制行数
+        for (int i = 0; i < n + 1; i++)
+        {
+            /*控制每一行*/
+            //输出空格
+            for (int j = 0; j < i; j++)
+            {
+                printf("  ");
+            }
+
+            //控制输出*
+            for (int k = 0; k < n+1-i; k++)
+            {
+                printf("*");
+            }
+
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
