@@ -500,6 +500,16 @@ int main()
     return 0;
 }
 
+//BC31 发布信息
+#include <stdio.h>
+
+int main()
+{
+    printf("I lost my cellphone!\n");
+
+    return 0;
+}
+
 //BC32 输出学生信息
 #include <stdio.h>
 
@@ -545,6 +555,33 @@ int main()
     int sum = a+b;
     //输出
     printf("%d\n",sum);
+    return 0;
+}
+
+//BC36 健康评估
+#include <stdio.h>
+
+int main()
+{
+    double bmi = 0.0;
+    double weight = 0.0;
+    double high = 0.0;
+
+    //输入
+    scanf("%lf %lf",&weight,&high);
+
+    //判断
+    bmi = weight/(high*high);
+
+    if(bmi >= 18.5 && bmi <= 23.9)
+    {
+        printf("Normal\n");
+    }
+    else 
+    {
+        printf("Abnormal\n");
+    }
+
     return 0;
 }
 
@@ -1092,6 +1129,33 @@ int main()
     return 0;
 }
 
+//BC49 判断两个数的大小关系
+#include <stdio.h>
+
+int main()
+{
+    int a = 0;
+    int b = 0;
+
+    while(scanf("%d %d",&a,&b) != EOF)
+    {
+        if(a == b)
+        {
+            printf("%d=%d\n",a,b);
+        }
+        else if(a > b)
+        {
+            printf("%d>%d\n",a,b);
+        }
+        else 
+        {
+            printf("%d<%d\n",a,b);
+        }
+    } 
+
+    return 0;
+}
+
 //BC50 计算单位阶跃函数
 #include <stdio.h>
 
@@ -1601,3 +1665,264 @@ int main()
 
     return 0;
 }
+
+//BC66 反斜线形图案
+#include <stdio.h>
+
+int main()
+{
+    int n =0;
+
+    while(scanf("%d",&n) != EOF)
+    {
+        //控制行数
+        for(int i = 0; i < n; i++)
+        {
+            //打印空格
+            for(int j = 0; j < i; j++)
+            {
+                printf(" ");
+            }
+
+            //打印*
+            printf("*\n");
+        }
+
+    }
+
+    return 0;
+}
+
+//BC67 正斜线形图案
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+
+    while(scanf("%d",&n) != EOF)
+    {
+        //控制行
+        for(int i = 0; i < n; i++)
+        {
+            //控制每行的空格
+            for(int j = 0; j < n-i-1; j++)
+            {
+                printf(" ");
+            }
+
+            //打印每行的*并换行
+            printf("*\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC68 X形图案
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+
+    while (scanf("%d",&n) != EOF) 
+    {
+        //控制行数
+        for(int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < n; j++)
+            {
+                if(i == j || i  == n-1-j)//[i,j]是判断正斜线，而[i,n-1-j]是判断反斜线
+                {
+                    printf("*");
+                }
+                else 
+                {
+                    printf(" ");
+                }
+            }
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC69 空心正方形图案
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+
+    while(scanf("%d",&n) != EOF)
+    {
+        //控制行
+        for(int i = 0; i < n; i++)
+        {
+            //控制列
+            for(int j = 0; j < n; j++)
+            {
+                if(i == 0 || i == n-1 || j == 0 || j == n-1)
+                {
+                    printf("* ");
+                }
+                else 
+                {
+                    printf("  ");
+                }
+                
+            }
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC70 空心三角形图案
+#include <stdio.h>
+
+int main()
+{
+    int n =0;
+
+    while(scanf("%d",&n) != EOF)
+    {
+        //控制行
+        for(int i = 0; i < n; i++)
+        {
+            //控制列
+            for(int j = 0; j < n; j++)
+            {
+                if(i == j || j == 0 || i == n-1)
+                {
+                    printf("* ");
+                }
+                else 
+                {
+                    printf("  ");
+                }
+            }
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC71 新年快乐
+#include <stdio.h>
+
+int main()
+{
+    printf("Happy New Year*2019*\n");
+    return 0;
+}
+
+//BC72 平均身高
+#include <stdio.h>
+
+double Average(double* number)
+{
+    double sum = 0.0;
+    int i = 0;
+
+    while (i < 5) 
+    {
+        sum += number[i];
+        i++;
+    }
+
+    return sum/5.0;
+}
+
+int main()
+{
+    double number[5] = {0};
+    int i = 0;
+
+    //输入
+    for(int i = 0; i < 5; i++)
+    {
+        scanf("%lf ",&number[i]);
+    }
+
+    //计算
+    double avg = Average(number);
+
+    //输出
+    printf("%.2lf",avg);
+
+    return 0;
+}
+
+//BC73 挂科危险
+#include <stdio.h>
+
+int main()
+{
+    int score = 0;
+
+    //输入
+    scanf("%d",&score);
+
+    //输出
+    if(score >= 10)
+    {
+        printf("Danger++\n");
+    }
+    else if(score >=4 && score <10)
+    {
+        printf("Danger\n");
+    }
+    else if(score >= 0 && score <4)
+    {
+        printf("Good\n");
+    }
+
+}
+
+//BC74 HTTP状态码
+#include <stdio.h>
+
+int main()
+{
+    int httpCode = 0;
+
+    //输入
+    while(scanf("%d",&httpCode) != EOF)
+    {
+        switch (httpCode) 
+        {
+            case 200:
+                printf("OK\n");
+                break;
+            case 202:
+                printf("Accepted\n");
+                break;
+            case 400:
+                printf("Bad Request\n");
+                break;
+            case 403:
+                printf("Forbidden\n");
+                break;
+            case 404:
+                printf("Not Found\n");
+                break;
+            case 500:
+                printf("Internal Server Error\n");
+                break;
+            case 502:
+                printf("Bad Gateway\n");
+                break;
+            default:
+                break;
+        }
+    }
+
+    return 0;
+}
+
+//
