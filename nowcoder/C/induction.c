@@ -1925,4 +1925,76 @@ int main()
     return 0;
 }
 
-//
+//BC75 数字三角形
+#include <stdio.h>
+
+int main()
+{
+    int n =0;
+
+    while(scanf("%d",&n) != EOF)
+    {
+        //控制行数
+        for(int i = 0; i < n; i++)
+        {
+            //控制每行
+            for(int j = 1; j <= i+1; j++)
+            {
+                printf("%d ",j);
+            }
+
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC76 公务员面试
+#include <stdio.h>
+
+//不能像冒泡排序一样改变数组顺序，只找最大最小值,具体具体我也不知道为什么
+int CompareMax(const int arr[], int sz) 
+{
+    int max = arr[0];
+    for (int i = 1; i < sz; i++) 
+    {
+        if (max < arr[i]) 
+        {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+int CompareMin(const int arr[], int sz) 
+{
+    int min = arr[0];
+    for (int i = 1; i < sz; i++) 
+    {
+        if (min > arr[i]) 
+        {
+            min = arr[i];
+        }
+    }
+    return min;
+}
+
+int main() {
+    int arr[7];
+    int sz = sizeof(arr) / sizeof(arr[0]);
+    //多组输入
+    while (~scanf("%d %d %d %d %d %d %d", &arr[0], &arr[1], &arr[2], &arr[3],&arr[4], &arr[5], &arr[6])) 
+    {
+        int max = CompareMax(arr, sz);
+        int min = CompareMin(arr, sz);
+        int sum = 0;
+        for (int i = 0; i < sz; i++) 
+        {
+            sum += arr[i];
+        }
+        double average = (double)(sum - max - min) / (sz - 2);
+        printf("%.2f\n", average);
+    }
+    return 0;
+}
