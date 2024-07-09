@@ -2100,3 +2100,28 @@ int main()
 
     return 0;
 }
+
+//BC80 登录验证
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char name[20] = {0};
+    char password[20] = {0};
+    char ueserName[] = "admin";
+    char userPassword[] = "admin";
+
+    while (scanf("%s %s",name,password) != EOF) 
+    {
+        if(strcmp(name,ueserName) == 0 && strcmp(password, userPassword) == 0)
+        {
+            printf("Login Success!\n");
+        }
+        else
+        {
+            printf("Login Fail!\n");
+        }
+    }
+    return 0;
+}
