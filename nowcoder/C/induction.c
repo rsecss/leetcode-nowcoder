@@ -2101,6 +2101,52 @@ int main()
     return 0;
 }
 
+//BC79 图像相似度
+#include <stdio.h>
+
+int main()
+{
+    int row = 0;
+    int col = 0;
+    int arr1[100][100] = {0};
+    int arr2[100][100] = {0};
+
+    //输入
+    scanf("%d %d",&row,&col);
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j < col; j++)
+        {
+            scanf("%d ",&arr1[i][j]);
+        }
+    }
+
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j < col; j++)
+        {
+            scanf("%d ",&arr2[i][j]);
+        }
+    }
+
+    int count = 0;//计数
+
+    //比较
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j < col; j++)
+        {
+            if(arr1[i][j] ==arr2[i][j])
+            count++;
+        }
+    }
+
+    //输出
+    printf("%.2lf\n",100.0*count/(row*col));
+
+    return 0;
+}
+
 //BC80 登录验证
 #include <stdio.h>
 #include <string.h>
@@ -2125,3 +2171,101 @@ int main()
     }
     return 0;
 }
+
+//BC81 学好C++
+#include <stdio.h>
+
+int main()
+{
+    printf("I will learn C++ well!\n");
+
+    return 0;
+}
+
+//BC82 (a+b-c)*d的计算问题
+#include <stdio.h>
+
+int main()
+{
+    int a=0,b=0,c=0,d=0;
+    while(scanf("%d %d %d %d",&a, &b, &c, &d) != EOF)
+    {
+        printf("%d\n",(a + b - c)*d);
+    }
+
+    return 0;
+}
+
+//BC83 被5整除问题
+#include <stdio.h>
+
+int main()
+{
+    int number = 0;
+
+    while(scanf("%d",&number) != EOF)
+    {
+        if(number%5 == 0)
+        {
+            printf("YES\n");
+        }
+        else 
+        {
+            printf("NO\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC84 计算y的值
+#include <stdio.h>
+
+int main()
+{
+    int number = 0;
+
+    while(scanf("%d",&number) != EOF)
+    {
+        if(number%5 == 0)
+        {
+            printf("YES\n");
+        }
+        else 
+        {
+            printf("NO\n");
+        }
+    }
+
+    return 0;
+}
+
+//BC85 包含数字9的数
+#include <stdio.h>
+
+int main()
+{
+    int count = 0;
+
+    for(int i = 1; i <=2019; i++)
+    {
+        int ret = i;
+        while(ret > 0)
+        {       
+            if(ret % 10 == 9)
+            {
+                count++;
+                break;
+            }
+            else
+            {
+                ret /= 10;
+            }
+        }
+    }
+
+    printf("%d\n",count);
+    return 0;
+}
+
+//
