@@ -2268,4 +2268,171 @@ int main()
     return 0;
 }
 
+//BC86 奇偶统计
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    int count1 = 0;
+    int count2 = 0;
+
+    while(scanf("%d",&n) != EOF)
+    {
+        for(int i = 1; i <= n; i++)
+        {
+            if(i % 2 == 0)
+            {
+                count1++; 
+            }
+            else 
+            {
+                count2++;
+            } 
+        }
+    }
+    printf("%d %d",count2,count1);
+
+    return 0;
+}
+
+//BC87 统计成绩
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    double arr[100] = {0};
+    
+    //输入
+    scanf("%d",&n);
+
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%lf ",&arr[i]);
+    }
+
+    double max = arr[0];
+    double min = arr[0];
+    double sum = 0.0;
+    //计算
+    for(int i = 0; i < n; i++)
+    {
+        //求最大值
+        if(arr[i] > max)
+        {
+            max = arr[i];
+        }
+        
+        //求最小值
+        if(arr[i] < min)
+        {
+            min = arr[i];
+        }
+
+        //求和
+        sum += arr[i];
+    }
+
+    printf("%.2lf %.2lf %.2lf",max,min,sum/n);
+
+    return 0;
+}
+
+//BC88 有序序列插入一个数
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    int number = 0;
+    int arr[50] ={0};
+
+    //输入
+    scanf("%d",&n);
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d ",&arr[i]);
+    }
+    scanf("%d",&number);
+
+    //排序
+    for(int i = n-1; i >= 0; i--)
+    {
+        if(number > arr[i])
+        {
+            arr[i+1] = number;
+            break;
+        }
+        else 
+        {
+            arr[i+1] = arr[i];
+            arr[i] = number;
+        }
+    }
+
+    //输出
+    for(int i = 0; i < n+1;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+
+    return 0;
+}
+
+//BC89 密码验证
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char password1[20] = {0};
+    char password2[20] = {0};
+
+    //输入
+    scanf("%s %s ",password1,password2);
+
+    //判断
+    if(strcmp(password1, password2))
+    {
+        printf("different\n");
+    }
+    else
+    {
+        printf("same\n");
+    }
+    
+    return 0;    
+}
+
+//BC90 矩阵计算
+#include <stdio.h>
+
+int main()
+{
+    int m = 0;
+    int n = 0;
+    scanf("%d %d",&m,&n);
+    int arr[10][10] ={0};
+    int sum = 0;
+
+    //输入和计算
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            scanf("%d",&arr[i][j]);
+            if(arr[i][j] > 0)
+            {
+                sum += arr[i][j];
+            }
+        }
+    }
+
+    //输出
+    printf("%d\n",sum);
+
+    return 0;
+}
+
 //
