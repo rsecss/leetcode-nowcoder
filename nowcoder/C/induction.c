@@ -2435,4 +2435,353 @@ int main()
     return 0;
 }
 
-//
+//BC91 成绩输入输出问题
+#include <stdio.h>
+
+int main()
+{
+    int arr[10] ={0};
+
+    //输入输出
+    for(int i = 0; i < 10; i++)
+    {
+        scanf("%d ",&arr[i]);
+        printf("%d ",arr[i]);
+    }
+
+    return 0;
+}
+
+//BC92 逆序输出
+#include <stdio.h>
+
+int main()
+{
+    int arr[10] = {0};
+
+    //输入
+    for(int i = 0; i < 10; i++)
+    {
+        scanf("%d ",&arr[i]);
+    }
+
+    //输出
+    for(int i = 9; i >= 0; i--)
+    {
+        printf("%d ",arr[i]);
+    }
+
+    return 0;
+}
+
+//BC93 统计数据正负个数0
+#include <stdio.h>
+
+int main()
+{
+    int arr[10]={0};
+    int positive = 0;
+    int negative = 0;
+
+    //输入
+    for(int i = 0; i < 10; i++)
+    {
+        scanf("%d ",&arr[i]);
+    }
+
+    //判断
+    for(int i = 0; i < 10; i++)
+    {
+        if(arr[i] > 0)
+        {
+            positive++;
+        }
+        else if(arr[i] < 0)
+        {
+            negative++;
+        }
+        else 
+        {
+            continue;
+        }
+    }
+
+    //输出
+    printf("positive:%d\nnegative:%d",positive,negative);
+
+    return 0;
+}
+
+//BC94 N个数之和
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d",&n);
+    int arr[n];
+    int sum = 0;
+
+    //输入和计算
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d ",&arr[i]);
+        sum += arr[i];
+    }
+
+    //输出
+    printf("%d\n",sum);
+    
+    return 0;
+}
+
+//BC95 最高分与最低分之差
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+
+    //输入
+    scanf("%d",&n);
+    int arr[n];
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d ",&arr[i]);
+
+    }
+
+    //找最大值和最小值
+    int max = arr[0];
+    int min = arr[0];  
+    for(int j = 0; j < n; j++)
+    {
+        if(arr[j] > max)
+        {
+            max =arr[j];
+        }
+
+        if(arr[j] < min)
+        {
+            min = arr[j];
+        }
+    }
+
+    //输出
+    printf("%d\n",max-min);
+
+    return 0;
+}
+
+//BC96 有序序列判断
+#include <stdbool.h>
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d",&n);
+    int arr[n];
+    int flag1 = 1;//升序
+    int flag2 = 1;//降序
+    
+    //输入
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+
+    //判断
+    for(int i = 0; i < n; i++)
+    {    
+        if(i > 0)
+        {
+            if(arr[i] > arr[i-1])
+            {
+                flag1 = 0;
+            }
+            else if(arr[i] < arr[i-1])
+            {
+                flag2 = 0;
+            }
+        }
+    }
+
+    //输出
+    if(flag1 ||flag2)
+    {
+        printf("sorted\n");
+    }
+    else 
+    {
+        printf("unsorted\n");
+    }
+
+    return 0;
+}
+
+//BC97 有序序列插入一个整数
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d",&n);     //输入第一行
+    int arr[n];
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d ",&arr[i]);
+    }                   //输入第二行
+    int val = 0;
+    scanf("%d",&val);   //输入第三行
+
+    //插入后1排序
+    for(int i = n-1; i >= 0; i--)
+    {
+        if(val > arr[i])
+        {
+            arr[i+1] = val;
+            break;
+        }
+        else 
+        {
+            arr[i+1] = arr[i];
+            arr[i] = val;
+        }
+    }
+    
+    //输出
+    for(int i = 0; i < n+1;i++)
+    {
+        printf("%d ",arr[i]);
+    }
+
+    return 0;
+}
+
+//BC98 序列中删除指定数字
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d",&n);     //输入第一行
+    int arr[n];
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d ",&arr[i]);
+    }                   //输入第二行
+    int deleteVal = 0;
+    scanf("%d",&deleteVal);   //输入第三行
+    
+    //删除
+    for(int i = 0; i < n; i++)
+    {
+        if(arr[i] == deleteVal)
+        {
+            continue;
+        }
+        printf("%d ",arr[i]);
+    }
+
+    return 0;
+}
+
+//BC99 序列中整数去重
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d",&n);
+    int arr1[n];
+    int arr2[n];
+    int k = 0;
+
+    for(int i = 0; i < n; i++)
+    {   
+        int flag = 0;
+        //输入
+        scanf("%d",&arr1[i]);
+
+        //去重
+        for(int j = 0; j < i; j++)
+        {
+            if(arr2[j] == arr1[i])
+            {
+                flag = 1;
+                break;
+            }
+        }
+
+        if(flag == 0)
+        {
+            //说明此时为非重复元素
+            arr2[k] = arr1[i];
+            k++;
+        }
+    }
+
+    //打印数组
+    for(int i = 0; i < k; i++)
+    {
+        printf("%d ",arr2[i]);
+    }
+
+    return 0;
+}
+
+//BC100 有序序列合并
+#include <stdio.h>
+
+int main()
+{
+    int n=0,m=0;
+    scanf("%d %d",&n,&m);
+    int arr1[n];
+    int arr2[m];
+    int i, j;
+
+    //输入
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d ",&arr1[i]);
+    }
+
+    for(i = 0; i < m; i++)
+    {
+        scanf("%d ",&arr2[i]);
+    }
+
+    //合并排序
+    i = 0, j = 0; 
+    while(i<n && j<m)
+    {
+        if(arr1[i] < arr2[j])
+        {
+            printf("%d ",arr1[i]);
+            i++;
+        }
+        else 
+        {
+            printf("%d ",arr2[j]);
+            j++;
+        }
+    }
+
+    // 打印剩余的部分
+    while(j < m)
+    {
+        printf("%d ",arr2[j]);
+        j++;
+    }
+
+    while(i < n)
+    {
+        printf("%d ",arr1[i]);
+        i++;
+    }
+
+    return 0;
+}
+
