@@ -2785,3 +2785,332 @@ int main()
     return 0;
 }
 
+//BC101 班级成绩输入输出
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    double arr[5][5] = {0};
+
+    //输入
+    for(int i = 0; i < 5; i++)
+    {
+        for(int j = 0; j < 5; j++)
+        {
+            scanf("%lf ",&arr[i][j]);
+        }
+    }
+
+    //计算和输出    
+    for(int i = 0; i < 5; i++)
+    {
+        double sum = 0;
+
+        for(int j = 0; j < 5; j++)
+        {
+            sum += arr[i][j];
+            printf("%lf ",arr[i][j]);
+        }
+        printf("%.1lf\n",sum);  //打印每行末尾的和
+    }
+
+    return 0;
+}
+
+//BC102 矩阵元素定位
+#include <stdio.h>
+
+int main()
+{
+    int n=0, m=0;
+    scanf("%d %d",&n,&m);
+    int arr[n+1][m+1];
+    int x=0, y=0;
+
+    //输入
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= m; j++)
+        {
+            scanf("%d ",&arr[i][j]);
+        }
+    }
+    scanf("%d %d",&x,&y);
+
+    //输出
+    printf("%d\n",arr[x][y]);
+
+    return 0;
+}
+
+//BC103 序列重组矩阵
+#include <stdio.h>
+
+int main() 
+{
+    int n=0, m=0;
+    scanf("%d %d",&n,&m);
+    int arr[n][m];
+
+    //输入同时输出
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < m; j++)
+        {
+            scanf("%d ",&arr[i][j]);
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+//BC104 最高身高
+#include <stdio.h>
+
+#define MAX_ROWS 100
+#define MAX_COLS 100
+
+int main()
+{
+    int n, m;
+    scanf("%d %d", &n, &m);
+    int arr[MAX_ROWS][MAX_COLS];
+    int x = 0, y = 0;
+
+    // 读取输入到数组中
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            scanf("%d", &arr[i][j]);
+            
+            // 找到最大值
+            if (arr[i][j] > arr[x][y])
+            {
+                x = i;
+                y = j;
+            }
+        }
+    }
+
+    // 输出（以1为起始）
+    printf("%d %d", x + 1, y + 1);
+
+    return 0;
+}
+
+//BC105 矩阵相等判定
+#include <stdio.h>
+
+#define MAX_ROWS 100
+#define MAX_COLS 100 
+
+int main()      
+{
+    int n=0, m=0;
+    scanf("%d %d",&n,&m);
+    int arr1[MAX_ROWS][MAX_COLS] = {0};
+    int arr2[MAX_ROWS][MAX_COLS] = {0};
+    int x=0, y=0;
+
+    //输入arr1
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            scanf("%d", &arr1[i][j]);
+        }
+    }
+
+    //输入arr2并判断
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < m; j++)
+        {
+            scanf("%d ", &arr2[i][j]);
+
+            if(arr1[i][j] != arr2[i][j])
+            {
+                printf("No\n");
+                return 0;
+            }
+        }
+    }
+    printf("Yes\n");
+    
+    return 0;
+}
+
+//BC106 上三角矩阵判定
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d",&n);
+    int arr[n][n];
+
+    //输入
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            scanf("%d ",&arr[i][j]);
+        }
+    }
+
+    //判断并输出
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < i; j++)
+        {
+            if(arr[i][j] != 0)
+            {
+                printf("NO\n");
+                return 0;
+            }
+        }
+    }
+    printf("YES\n");
+
+    return 0;
+}
+
+//BC107 矩阵转置
+#include <stdio.h>
+
+int main()
+{
+    int n=0, m=0;
+    scanf("%d %d",&n,&m);
+    int arr[n][m];
+
+    //输入
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < m; j++)
+        {
+            scanf("%d ",&arr[i][j]);
+        }
+    }
+
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            printf("%d ",arr[j][i]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+
+//BC108 矩阵交换
+#include <stdio.h>
+
+int main()
+{
+    int n=0, m=0;
+    scanf("%d %d",&n,&m);
+    int arr[n][m];
+
+    //输入
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < m; j++)
+        {
+            scanf("%d",&arr[i][j]);
+        }
+    }
+
+    int k = 0;  //统计次数
+    char t = 0;
+    int before=0, after=0; //变换的行（列）号
+    scanf("%d",&k);
+
+    //判断并转换
+    while(k > 0)
+    {
+        int tmp = 0;
+        //这里有一个坑，就是在%c之前必须加一个空格，确保读取字符时跳过换行符或空格。
+        scanf(" %c %d %d",&t,&before,&after);
+
+        if(t == 'r')
+        {
+            if(before <= n && before <= n)
+            {
+                for(int j = 0; j < m; j++)
+                {
+                    //交换after和before行，列不变
+                    tmp =arr[before-1][j];
+                    arr[before-1][j] = arr[after-1][j];
+                    arr[after-1][j] = tmp;
+                }
+            }
+        }
+        if(t == 'c')
+        {
+            if(before <= m && after <= m)
+            {
+                for(int i = 0; i < n; i++)
+                {
+                    //交换after和before列，行不变
+                    tmp = arr[i][before-1];
+                    arr[i][before-1] = arr[i][after-1];
+                    arr[i][after-1] = tmp;
+                }
+            }
+        }
+        k--;
+    }
+
+    //打印
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j < m; j++)
+        {
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+//BC109 杨辉三角
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d",&n);
+    int arr[n][n];
+
+    //输入
+    for(int i = 0; i < n; i++)
+    {
+        for(int j = 0; j <= i; j++)
+        {
+            //计算
+            if(j == 0 || i == j)
+            {
+                arr[i][j] = 1;
+            }
+            else 
+            {
+                arr[i][j] = arr[i-1][j-1] +arr[i-1][j];
+            }
+            //输出
+            printf("%5d",arr[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+//
