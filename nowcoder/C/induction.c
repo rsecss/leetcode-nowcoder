@@ -3113,4 +3113,64 @@ int main()
     return 0;
 }
 
+//BC110 井字棋
+#include <stdio.h>
+
+int main()
+{
+    char board[3][3] = {0};
+    char flag = 0;
+
+    //输入
+    for(int i = 0; i < 3; i++)
+    {
+        for(int j = 0; j < 3; j++)
+        {
+            scanf(" %c",&board[i][j]);
+        }
+    }
+
+    //判断输赢
+    for (int i = 0; i < 3; i++)
+    {
+        //行
+        if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][2] != 'O')
+        {
+            flag = board[i][2];
+            break;
+        }
+        //列
+        if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[2][i] != 'O')
+        {
+            flag = board[2][i];
+            break;
+        }
+    }
+    //正对角线
+    if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[2][2] != 'O')
+    {
+        flag = board[2][2];
+    }
+    //反对角线
+    if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[2][0] != 'O')
+    {
+        flag = board[2][0];
+    }
+
+    if(flag == 'K')
+    {
+        printf("KiKi wins!\n");
+    }
+    else if(flag == 'B')
+    {
+        printf("BoBo wins!\n");
+    }    
+    else 
+    {
+        printf("No winner!\n");
+    }
+
+    return 0;
+}
+
 //
