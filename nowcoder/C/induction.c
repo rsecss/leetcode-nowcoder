@@ -3198,4 +3198,43 @@ int main()
     return 0;
 }
 
-//
+//BC112 小乐乐求和
+#include <stdio.h>
+
+int main()
+{
+    long long n = 0;
+    long long sum = 0;
+
+    //求和
+    while(scanf("%lld",&n) != EOF)
+    {
+        sum += (1 + n)* n / 2; 
+    }
+
+    //输出
+    printf("%lld",sum);
+
+    return 0;
+}
+
+//BC113 小乐乐定闹钟
+#include <stdio.h>
+
+int main()
+{
+    int hour = 0;
+    int minute = 0;
+    int k = 0;
+
+    while(scanf("%d:%d %d",&hour,&minute,&k) != EOF)
+    {
+        //计算
+        int remainingMinutes = (k+minute) % 60;
+        int actualHour = (hour + (k+minute) / 60)%24;
+
+        printf("%02d:%02d\n",actualHour,remainingMinutes);
+    }
+
+    return 0;
+}
