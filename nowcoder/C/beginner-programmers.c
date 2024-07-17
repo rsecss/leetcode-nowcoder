@@ -3238,3 +3238,86 @@ int main()
 
     return 0;
 }
+
+//BC114 小乐乐排电梯
+#include <stdio.h>
+
+int main()
+{
+    int n  = 0;
+    scanf("%d",&n);
+
+    //计算并输出
+    if(n>=0 && n < 12)
+    {
+        printf("%d\n",2);
+    }
+    else if(n >= 12)
+    {
+        printf("%d\n",4*(n/12) + 2);
+    }
+
+    return 0;
+}
+
+//BC115 小乐乐与欧几里得
+#include <stdio.h>
+
+int main()
+{
+    long long n  = 0;
+    long long m  = 0;
+    long long commonDivisors  = 0;//保存公约数
+    long long  commonMultiples = n*m;//保存公倍数
+    
+    while (scanf("%lld %lld",&n, &m) != EOF) 
+    {
+        long long num = n*m;        //存放两个整数相乘的值
+        while((commonDivisors = n % m) != 0)
+        {
+            //辗转相除法求最大公约数，当ret=0时m就是最大公约数
+            n = m;
+            m = commonDivisors;     //m就是最大公约数
+        }
+        commonMultiples = num/m;//两个数的乘积= 最大公约数*最小公倍数
+        printf("%lld\n",m+commonMultiples);
+    }
+
+    return 0;
+}
+
+//BC116 小乐乐改数字
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int ret = 0;
+    int placeValue = 1; // 用于构建结果的位数权重，从1开始
+
+    while (n > 0) 
+    {
+        int digit = n % 10;
+
+        // 根据奇偶性设置当前位的值
+        if (digit % 2 == 0) 
+        {
+            ret += 0 * placeValue;
+        } 
+        else 
+        {
+            ret += 1 * placeValue;
+        }
+
+        // 更新位数权重
+        placeValue *= 10;
+
+        // 去掉已经处理的最后一位
+        n /= 10;
+    }
+    printf("%d\n", ret);
+
+    return 0;
+}
+
