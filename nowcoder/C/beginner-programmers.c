@@ -3321,3 +3321,42 @@ int main() {
     return 0;
 }
 
+//BC118 小乐乐与序列
+#include <stdio.h>
+#include <stdlib.h>
+
+int Compare(const void*e1, const void*e2)
+{
+    return *(int*)e1-*(int*)e2;
+}
+
+int main()
+{
+    int n  = 0;
+    scanf("%d",&n);
+    int arr[n];
+    int count = 0;
+
+    //输入
+    for(int i = 0; i < n; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+
+    //排序
+    qsort(arr,n,sizeof(int),Compare);
+
+    //输出
+    for(int i = 0; i < n; i++)
+    {
+        if(arr[i] == arr[i+1])
+        {
+            continue;            
+        }
+        printf("%d ",arr[i]);
+    }
+
+    return 0;
+}
+
+//
