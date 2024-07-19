@@ -3359,4 +3359,118 @@ int main()
     return 0;
 }
 
-//
+//BC119 小乐乐与字符串
+#include <stdio.h>
+/*
+可以先找到所有的C然后用所有的C去匹配所有的H，找到所有的CH之后再用所有CH匹配N组合成CHN
+例如：
+CHNNCCHN:
+你先找到所有的C：总共有3个-->之后用这3个C去找H：一个C可对应2个H则3个C可对应出6个CH
+用你找到的6个CH去匹配N-->一个CH对应可对应3个N 则6个CH可对应出18个CHN所以可以找到18个CHN
+*/
+int main() 
+{
+    long long c = 0;
+    long long ch = 0;
+    long long chn = 0;
+    char arr[8001] = {0};
+    scanf("%s",arr);
+    char* p = arr;
+
+    while(*p)
+    {
+        if(*p == 'C')
+        {
+            c++;
+        }
+        else if(*p =='H')
+        {
+            ch += c;
+        }
+        else if(*p == 'N')
+        {
+            chn += ch;
+        }
+        p++;
+    }
+    printf("%lld",chn);
+    
+    return 0;
+}
+
+//BC120 小乐乐与二段数
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+// 判断一个数是否为二段数并且是n的倍数
+int is_binary_segmented_number(int num, int n) 
+{
+    char num_str[20];
+    sprintf(num_str, "%d", num); // 将数字转换为字符串
+    int len = strlen(num_str);
+
+    // 检查数字是否恰好包含两种不同的数字
+    char s = num_str[0];
+    char t = num_str[0];
+    for (int i = 0; i < len; ++i) 
+    {
+        if (num_str[i] != s && num_str[i] != t) 
+        {
+            t = num_str[i];
+            break;
+        }
+    }
+    if (s == t) 
+    {
+        return 0; // 不是二段数 
+    }
+
+    // 确保所有的s出现在所有的t之前
+    for (int i = 0; i < len; ++i) 
+    {
+        if (num_str[i] == t) 
+        {
+            return 0; // 发现t在s之前，不是二段数
+        }
+    }
+    
+    // 检查是否是n的倍数
+    if (num % n != 0) 
+    {
+        return 0;
+    }
+    
+    return 1; // 是二段数并且是n的倍数
+}
+
+// 寻找大于n且是n的倍数的最小二段数
+int find_next_binary_segmented_number(int n)
+{
+    int condidate = n+1;
+    while(1)
+    {
+        if(is_binary_segmented_number(condidate, n))
+        {
+            return condidate;
+        }
+        condidate++;
+    }
+}
+
+int main()
+{
+    int n = 0;
+    while (scanf("%d",&n) != EOF) 
+    {
+        if(n == 0)
+        {
+            break;
+        }
+        int result = find_next_binary_segmented_number(n);
+        printf("%d: %d\n",n,result);
+    }
+
+    return 0;
+}
