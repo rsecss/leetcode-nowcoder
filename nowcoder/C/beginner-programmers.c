@@ -2101,7 +2101,7 @@ int main()
     return 0;
 }
 
-//BC79 图像相似度
+// BC79 图像相似度
 #include <stdio.h>
 
 int main()
@@ -2111,43 +2111,43 @@ int main()
     int arr1[100][100] = {0};
     int arr2[100][100] = {0};
 
-    //输入
-    scanf("%d %d",&row,&col);
-    for(int i = 0; i < row; i++)
+    // 输入
+    scanf("%d %d", &row, &col);
+    for (int i = 0; i < row; i++)
     {
-        for(int j = 0; j < col; j++)
+        for (int j = 0; j < col; j++)
         {
-            scanf("%d ",&arr1[i][j]);
+            scanf("%d ", &arr1[i][j]);
         }
     }
 
-    for(int i = 0; i < row; i++)
+    for (int i = 0; i < row; i++)
     {
-        for(int j = 0; j < col; j++)
+        for (int j = 0; j < col; j++)
         {
-            scanf("%d ",&arr2[i][j]);
+            scanf("%d ", &arr2[i][j]);
         }
     }
 
-    int count = 0;//计数
+    int count = 0; // 计数
 
-    //比较
-    for(int i = 0; i < row; i++)
+    // 比较
+    for (int i = 0; i < row; i++)
     {
-        for(int j = 0; j < col; j++)
+        for (int j = 0; j < col; j++)
         {
-            if(arr1[i][j] ==arr2[i][j])
-            count++;
+            if (arr1[i][j] == arr2[i][j])
+                count++;
         }
     }
 
-    //输出
-    printf("%.2lf\n",100.0*count/(row*col));
+    // 输出
+    printf("%.2lf\n", 100.0 * count / (row * col));
 
     return 0;
 }
 
-//BC80 登录验证
+// BC80 登录验证
 #include <stdio.h>
 #include <string.h>
 
@@ -2155,12 +2155,12 @@ int main()
 {
     char name[20] = {0};
     char password[20] = {0};
-    char ueserName[] = "admin";
-    char userPassword[] = "admin";
+    char ueser_name[] = "admin";
+    char user_password[] = "admin";
 
-    while (scanf("%s %s",name,password) != EOF) 
+    while (scanf("%s %s", name, password) != EOF)
     {
-        if(strcmp(name,ueserName) == 0 && strcmp(password, userPassword) == 0)
+        if (strcmp(name, ueser_name) == 0 && strcmp(password, user_password) == 0)
         {
             printf("Login Success!\n");
         }
@@ -2172,7 +2172,7 @@ int main()
     return 0;
 }
 
-//BC81 学好C++
+// BC81 学好C++
 #include <stdio.h>
 
 int main()
@@ -2182,34 +2182,34 @@ int main()
     return 0;
 }
 
-//BC82 (a+b-c)*d的计算问题
+// BC82 (a+b-c)*d的计算问题
 #include <stdio.h>
 
 int main()
 {
-    int a=0,b=0,c=0,d=0;
-    while(scanf("%d %d %d %d",&a, &b, &c, &d) != EOF)
+    int a = 0, b = 0, c = 0, d = 0;
+    while (scanf("%d %d %d %d", &a, &b, &c, &d) != EOF)
     {
-        printf("%d\n",(a + b - c)*d);
+        printf("%d\n", (a + b - c) * d);
     }
 
     return 0;
 }
 
-//BC83 被5整除问题
+// BC83 被5整除问题
 #include <stdio.h>
 
 int main()
 {
     int number = 0;
 
-    while(scanf("%d",&number) != EOF)
+    while (scanf("%d", &number) != EOF)
     {
-        if(number%5 == 0)
+        if (number % 5 == 0)
         {
             printf("YES\n");
         }
-        else 
+        else
         {
             printf("NO\n");
         }
@@ -2218,20 +2218,20 @@ int main()
     return 0;
 }
 
-//BC84 计算y的值
+// BC84 计算y的值
 #include <stdio.h>
 
 int main()
 {
     int number = 0;
 
-    while(scanf("%d",&number) != EOF)
+    while (scanf("%d", &number) != EOF)
     {
-        if(number%5 == 0)
+        if (number % 5 == 0)
         {
             printf("YES\n");
         }
-        else 
+        else
         {
             printf("NO\n");
         }
@@ -2240,19 +2240,19 @@ int main()
     return 0;
 }
 
-//BC85 包含数字9的数
+// BC85 包含数字9的数
 #include <stdio.h>
 
 int main()
 {
     int count = 0;
 
-    for(int i = 1; i <=2019; i++)
+    for (int i = 1; i <= 2019; i++)
     {
         int ret = i;
-        while(ret > 0)
-        {       
-            if(ret % 10 == 9)
+        while (ret > 0)
+        {
+            if (ret % 10 == 9)
             {
                 count++;
                 break;
@@ -2264,11 +2264,11 @@ int main()
         }
     }
 
-    printf("%d\n",count);
+    printf("%d\n", count);
     return 0;
 }
 
-//BC86 奇偶统计
+// BC86 奇偶统计
 #include <stdio.h>
 
 int main()
@@ -2277,110 +2277,110 @@ int main()
     int count1 = 0;
     int count2 = 0;
 
-    while(scanf("%d",&n) != EOF)
+    while (scanf("%d", &n) != EOF)
     {
-        for(int i = 1; i <= n; i++)
+        for (int i = 1; i <= n; i++)
         {
-            if(i % 2 == 0)
+            if (i % 2 == 0)
             {
-                count1++; 
+                count1++;
             }
-            else 
+            else
             {
                 count2++;
-            } 
+            }
         }
     }
-    printf("%d %d",count2,count1);
+    printf("%d %d", count2, count1);
 
     return 0;
 }
 
-//BC87 统计成绩
+// BC87 统计成绩
 #include <stdio.h>
 
 int main()
 {
     int n = 0;
     double arr[100] = {0};
-    
-    //输入
-    scanf("%d",&n);
 
-    for(int i = 0; i < n; i++)
+    // 输入
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++)
     {
-        scanf("%lf ",&arr[i]);
+        scanf("%lf ", &arr[i]);
     }
 
     double max = arr[0];
     double min = arr[0];
     double sum = 0.0;
-    //计算
-    for(int i = 0; i < n; i++)
+    // 计算
+    for (int i = 0; i < n; i++)
     {
-        //求最大值
-        if(arr[i] > max)
+        // 求最大值
+        if (arr[i] > max)
         {
             max = arr[i];
         }
-        
-        //求最小值
-        if(arr[i] < min)
+
+        // 求最小值
+        if (arr[i] < min)
         {
             min = arr[i];
         }
 
-        //求和
+        // 求和
         sum += arr[i];
     }
 
-    printf("%.2lf %.2lf %.2lf",max,min,sum/n);
+    printf("%.2lf %.2lf %.2lf", max, min, sum / n);
 
     return 0;
 }
 
-//BC88 有序序列插入一个数
+// BC88 有序序列插入一个数
 #include <stdio.h>
 
 int main()
 {
     int n = 0;
     int number = 0;
-    int arr[50] ={0};
+    int arr[50] = {0};
 
-    //输入
-    scanf("%d",&n);
-    for(int i = 0; i < n; i++)
+    // 输入
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
     {
-        scanf("%d ",&arr[i]);
+        scanf("%d ", &arr[i]);
     }
-    scanf("%d",&number);
+    scanf("%d", &number);
 
-    //排序
-    for(int i = n-1; i >= 0; i--)
+    // 排序
+    for (int i = n - 1; i >= 0; i--)
     {
-        if(number > arr[i])
+        if (number > arr[i])
         {
-            arr[i+1] = number;
+            arr[i + 1] = number;
             break;
         }
-        else 
+        else
         {
-            arr[i+1] = arr[i];
+            arr[i + 1] = arr[i];
             arr[i] = number;
         }
     }
 
-    //输出
-    for(int i = 0; i < n+1;i++)
+    // 输出
+    for (int i = 0; i < n + 1; i++)
     {
-        printf("%d ",arr[i]);
+        printf("%d ", arr[i]);
     }
 
     return 0;
 }
 
-//BC89 密码验证
+// BC89 密码验证
 #include <stdio.h>
 #include <string.h>
 
@@ -2389,11 +2389,11 @@ int main()
     char password1[20] = {0};
     char password2[20] = {0};
 
-    //输入
-    scanf("%s %s ",password1,password2);
+    // 输入
+    scanf("%s %s ", password1, password2);
 
-    //判断
-    if(strcmp(password1, password2))
+    // 判断
+    if (strcmp(password1, password2))
     {
         printf("different\n");
     }
@@ -2401,218 +2401,217 @@ int main()
     {
         printf("same\n");
     }
-    
-    return 0;    
+
+    return 0;
 }
 
-//BC90 矩阵计算
+// BC90 矩阵计算
 #include <stdio.h>
 
 int main()
 {
     int m = 0;
     int n = 0;
-    scanf("%d %d",&m,&n);
-    int arr[10][10] ={0};
+    scanf("%d %d", &m, &n);
+    int arr[10][10] = {0};
     int sum = 0;
 
-    //输入和计算
-    for(int i = 0; i < m; i++)
+    // 输入和计算
+    for (int i = 0; i < m; i++)
     {
-        for(int j = 0; j < n; j++)
+        for (int j = 0; j < n; j++)
         {
-            scanf("%d",&arr[i][j]);
-            if(arr[i][j] > 0)
+            scanf("%d", &arr[i][j]);
+            if (arr[i][j] > 0)
             {
                 sum += arr[i][j];
             }
         }
     }
 
-    //输出
-    printf("%d\n",sum);
+    // 输出
+    printf("%d\n", sum);
 
     return 0;
 }
 
-//BC91 成绩输入输出问题
-#include <stdio.h>
-
-int main()
-{
-    int arr[10] ={0};
-
-    //输入输出
-    for(int i = 0; i < 10; i++)
-    {
-        scanf("%d ",&arr[i]);
-        printf("%d ",arr[i]);
-    }
-
-    return 0;
-}
-
-//BC92 逆序输出
+// BC91 成绩输入输出问题
 #include <stdio.h>
 
 int main()
 {
     int arr[10] = {0};
 
-    //输入
-    for(int i = 0; i < 10; i++)
+    // 输入输出
+    for (int i = 0; i < 10; i++)
     {
-        scanf("%d ",&arr[i]);
-    }
-
-    //输出
-    for(int i = 9; i >= 0; i--)
-    {
-        printf("%d ",arr[i]);
+        scanf("%d ", &arr[i]);
+        printf("%d ", arr[i]);
     }
 
     return 0;
 }
 
-//BC93 统计数据正负个数0
+// BC92 逆序输出
 #include <stdio.h>
 
 int main()
 {
-    int arr[10]={0};
+    int arr[10] = {0};
+
+    // 输入
+    for (int i = 0; i < 10; i++)
+    {
+        scanf("%d ", &arr[i]);
+    }
+
+    // 输出
+    for (int i = 9; i >= 0; i--)
+    {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+
+// BC93 统计数据正负个数0
+#include <stdio.h>
+
+int main()
+{
+    int arr[10] = {0};
     int positive = 0;
     int negative = 0;
 
-    //输入
-    for(int i = 0; i < 10; i++)
+    // 输入
+    for (int i = 0; i < 10; i++)
     {
-        scanf("%d ",&arr[i]);
+        scanf("%d ", &arr[i]);
     }
 
-    //判断
-    for(int i = 0; i < 10; i++)
+    // 判断
+    for (int i = 0; i < 10; i++)
     {
-        if(arr[i] > 0)
+        if (arr[i] > 0)
         {
             positive++;
         }
-        else if(arr[i] < 0)
+        else if (arr[i] < 0)
         {
             negative++;
         }
-        else 
+        else
         {
             continue;
         }
     }
 
-    //输出
-    printf("positive:%d\nnegative:%d",positive,negative);
+    // 输出
+    printf("positive:%d\nnegative:%d", positive, negative);
 
     return 0;
 }
 
-//BC94 N个数之和
+// BC94 N个数之和
 #include <stdio.h>
 
 int main()
 {
     int n = 0;
-    scanf("%d",&n);
+    scanf("%d", &n);
     int arr[n];
     int sum = 0;
 
-    //输入和计算
-    for(int i = 0; i < n; i++)
+    // 输入和计算
+    for (int i = 0; i < n; i++)
     {
-        scanf("%d ",&arr[i]);
+        scanf("%d ", &arr[i]);
         sum += arr[i];
     }
 
-    //输出
-    printf("%d\n",sum);
-    
+    // 输出
+    printf("%d\n", sum);
+
     return 0;
 }
 
-//BC95 最高分与最低分之差
+// BC95 最高分与最低分之差
 #include <stdio.h>
 
 int main()
 {
     int n = 0;
 
-    //输入
-    scanf("%d",&n);
+    // 输入
+    scanf("%d", &n);
     int arr[n];
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        scanf("%d ",&arr[i]);
-
+        scanf("%d ", &arr[i]);
     }
 
-    //找最大值和最小值
+    // 找最大值和最小值
     int max = arr[0];
-    int min = arr[0];  
-    for(int j = 0; j < n; j++)
+    int min = arr[0];
+    for (int j = 0; j < n; j++)
     {
-        if(arr[j] > max)
+        if (arr[j] > max)
         {
-            max =arr[j];
+            max = arr[j];
         }
 
-        if(arr[j] < min)
+        if (arr[j] < min)
         {
             min = arr[j];
         }
     }
 
-    //输出
-    printf("%d\n",max-min);
+    // 输出
+    printf("%d\n", max - min);
 
     return 0;
 }
 
-//BC96 有序序列判断
+// BC96 有序序列判断
 #include <stdbool.h>
 #include <stdio.h>
 
 int main()
 {
     int n = 0;
-    scanf("%d",&n);
+    scanf("%d", &n);
     int arr[n];
-    int flag1 = 1;//升序
-    int flag2 = 1;//降序
-    
-    //输入
-    for(int i = 0; i < n; i++)
+    int flag1 = 1; // 升序
+    int flag2 = 1; // 降序
+
+    // 输入
+    for (int i = 0; i < n; i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d", &arr[i]);
     }
 
-    //判断
-    for(int i = 0; i < n; i++)
-    {    
-        if(i > 0)
+    // 判断
+    for (int i = 0; i < n; i++)
+    {
+        if (i > 0)
         {
-            if(arr[i] > arr[i-1])
+            if (arr[i] > arr[i - 1])
             {
                 flag1 = 0;
             }
-            else if(arr[i] < arr[i-1])
+            else if (arr[i] < arr[i - 1])
             {
                 flag2 = 0;
             }
         }
     }
 
-    //输出
-    if(flag1 ||flag2)
+    // 输出
+    if (flag1 || flag2)
     {
         printf("sorted\n");
     }
-    else 
+    else
     {
         printf("unsorted\n");
     }
@@ -2620,172 +2619,172 @@ int main()
     return 0;
 }
 
-//BC97 有序序列插入一个整数
+// BC97 有序序列插入一个整数
 #include <stdio.h>
 
 int main()
 {
     int n = 0;
-    scanf("%d",&n);     //输入第一行
+    scanf("%d", &n); // 输入第一行
     int arr[n];
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        scanf("%d ",&arr[i]);
-    }                   //输入第二行
+        scanf("%d ", &arr[i]);
+    } // 输入第二行
     int val = 0;
-    scanf("%d",&val);   //输入第三行
+    scanf("%d", &val); // 输入第三行
 
-    //插入后1排序
-    for(int i = n-1; i >= 0; i--)
+    // 插入后1排序
+    for (int i = n - 1; i >= 0; i--)
     {
-        if(val > arr[i])
+        if (val > arr[i])
         {
-            arr[i+1] = val;
+            arr[i + 1] = val;
             break;
         }
-        else 
+        else
         {
-            arr[i+1] = arr[i];
+            arr[i + 1] = arr[i];
             arr[i] = val;
         }
     }
-    
-    //输出
-    for(int i = 0; i < n+1;i++)
+
+    // 输出
+    for (int i = 0; i < n + 1; i++)
     {
-        printf("%d ",arr[i]);
+        printf("%d ", arr[i]);
     }
 
     return 0;
 }
 
-//BC98 序列中删除指定数字
+// BC98 序列中删除指定数字
 #include <stdio.h>
 
 int main()
 {
     int n = 0;
-    scanf("%d",&n);     //输入第一行
+    scanf("%d", &n); // 输入第一行
     int arr[n];
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        scanf("%d ",&arr[i]);
-    }                   //输入第二行
+        scanf("%d ", &arr[i]);
+    } // 输入第二行
     int deleteVal = 0;
-    scanf("%d",&deleteVal);   //输入第三行
-    
-    //删除
-    for(int i = 0; i < n; i++)
+    scanf("%d", &deleteVal); // 输入第三行
+
+    // 删除
+    for (int i = 0; i < n; i++)
     {
-        if(arr[i] == deleteVal)
+        if (arr[i] == deleteVal)
         {
             continue;
         }
-        printf("%d ",arr[i]);
+        printf("%d ", arr[i]);
     }
 
     return 0;
 }
 
-//BC99 序列中整数去重
+// BC99 序列中整数去重
 #include <stdio.h>
 
 int main()
 {
     int n = 0;
-    scanf("%d",&n);
+    scanf("%d", &n);
     int arr1[n];
     int arr2[n];
     int k = 0;
 
-    for(int i = 0; i < n; i++)
-    {   
+    for (int i = 0; i < n; i++)
+    {
         int flag = 0;
-        //输入
-        scanf("%d",&arr1[i]);
+        // 输入
+        scanf("%d", &arr1[i]);
 
-        //去重
-        for(int j = 0; j < i; j++)
+        // 去重
+        for (int j = 0; j < i; j++)
         {
-            if(arr2[j] == arr1[i])
+            if (arr2[j] == arr1[i])
             {
                 flag = 1;
                 break;
             }
         }
 
-        if(flag == 0)
+        if (flag == 0)
         {
-            //说明此时为非重复元素
+            // 说明此时为非重复元素
             arr2[k] = arr1[i];
             k++;
         }
     }
 
-    //打印数组
-    for(int i = 0; i < k; i++)
+    // 打印数组
+    for (int i = 0; i < k; i++)
     {
-        printf("%d ",arr2[i]);
+        printf("%d ", arr2[i]);
     }
 
     return 0;
 }
 
-//BC100 有序序列合并
+// BC100 有序序列合并
 #include <stdio.h>
 
 int main()
 {
-    int n=0,m=0;
-    scanf("%d %d",&n,&m);
+    int n = 0, m = 0;
+    scanf("%d %d", &n, &m);
     int arr1[n];
     int arr2[m];
     int i, j;
 
-    //输入
-    for(i = 0; i < n; i++)
+    // 输入
+    for (i = 0; i < n; i++)
     {
-        scanf("%d ",&arr1[i]);
+        scanf("%d ", &arr1[i]);
     }
 
-    for(i = 0; i < m; i++)
+    for (i = 0; i < m; i++)
     {
-        scanf("%d ",&arr2[i]);
+        scanf("%d ", &arr2[i]);
     }
 
-    //合并排序
-    i = 0, j = 0; 
-    while(i<n && j<m)
+    // 合并排序
+    i = 0, j = 0;
+    while (i < n && j < m)
     {
-        if(arr1[i] < arr2[j])
+        if (arr1[i] < arr2[j])
         {
-            printf("%d ",arr1[i]);
+            printf("%d ", arr1[i]);
             i++;
         }
-        else 
+        else
         {
-            printf("%d ",arr2[j]);
+            printf("%d ", arr2[j]);
             j++;
         }
     }
 
     // 打印剩余的部分
-    while(j < m)
+    while (j < m)
     {
-        printf("%d ",arr2[j]);
+        printf("%d ", arr2[j]);
         j++;
     }
 
-    while(i < n)
+    while (i < n)
     {
-        printf("%d ",arr1[i]);
+        printf("%d ", arr1[i]);
         i++;
     }
 
     return 0;
 }
 
-//BC101 班级成绩输入输出
+// BC101 班级成绩输入输出
 #include <stdio.h>
 
 int main()
@@ -2793,73 +2792,73 @@ int main()
     int n = 0;
     double arr[5][5] = {0};
 
-    //输入
-    for(int i = 0; i < 5; i++)
+    // 输入
+    for (int i = 0; i < 5; i++)
     {
-        for(int j = 0; j < 5; j++)
+        for (int j = 0; j < 5; j++)
         {
-            scanf("%lf ",&arr[i][j]);
+            scanf("%lf ", &arr[i][j]);
         }
     }
 
-    //计算和输出    
-    for(int i = 0; i < 5; i++)
+    // 计算和输出
+    for (int i = 0; i < 5; i++)
     {
         double sum = 0;
 
-        for(int j = 0; j < 5; j++)
+        for (int j = 0; j < 5; j++)
         {
             sum += arr[i][j];
-            printf("%lf ",arr[i][j]);
+            printf("%lf ", arr[i][j]);
         }
-        printf("%.1lf\n",sum);  //打印每行末尾的和
+        printf("%.1lf\n", sum); // 打印每行末尾的和
     }
 
     return 0;
 }
 
-//BC102 矩阵元素定位
+// BC102 矩阵元素定位
 #include <stdio.h>
 
 int main()
 {
-    int n=0, m=0;
-    scanf("%d %d",&n,&m);
-    int arr[n+1][m+1];
-    int x=0, y=0;
+    int n = 0, m = 0;
+    scanf("%d %d", &n, &m);
+    int arr[n + 1][m + 1];
+    int x = 0, y = 0;
 
-    //输入
-    for(int i = 1; i <= n; i++)
+    // 输入
+    for (int i = 1; i <= n; i++)
     {
-        for(int j = 1; j <= m; j++)
+        for (int j = 1; j <= m; j++)
         {
-            scanf("%d ",&arr[i][j]);
+            scanf("%d ", &arr[i][j]);
         }
     }
-    scanf("%d %d",&x,&y);
+    scanf("%d %d", &x, &y);
 
-    //输出
-    printf("%d\n",arr[x][y]);
+    // 输出
+    printf("%d\n", arr[x][y]);
 
     return 0;
 }
 
-//BC103 序列重组矩阵
+// BC103 序列重组矩阵
 #include <stdio.h>
 
-int main() 
+int main()
 {
-    int n=0, m=0;
-    scanf("%d %d",&n,&m);
+    int n = 0, m = 0;
+    scanf("%d %d", &n, &m);
     int arr[n][m];
 
-    //输入同时输出
-    for(int i = 0; i < n; i++)
+    // 输入同时输出
+    for (int i = 0; i < n; i++)
     {
-        for(int j = 0; j < m; j++)
+        for (int j = 0; j < m; j++)
         {
-            scanf("%d ",&arr[i][j]);
-            printf("%d ",arr[i][j]);
+            scanf("%d ", &arr[i][j]);
+            printf("%d ", arr[i][j]);
         }
         printf("\n");
     }
@@ -2867,7 +2866,7 @@ int main()
     return 0;
 }
 
-//BC104 最高身高
+// BC104 最高身高
 #include <stdio.h>
 
 #define MAX_ROWS 100
@@ -2886,7 +2885,7 @@ int main()
         for (int j = 0; j < m; j++)
         {
             scanf("%d", &arr[i][j]);
-            
+
             // 找到最大值
             if (arr[i][j] > arr[x][y])
             {
@@ -2902,21 +2901,21 @@ int main()
     return 0;
 }
 
-//BC105 矩阵相等判定
+// BC105 矩阵相等判定
 #include <stdio.h>
 
 #define MAX_ROWS 100
-#define MAX_COLS 100 
+#define MAX_COLS 100
 
-int main()      
+int main()
 {
-    int n=0, m=0;
-    scanf("%d %d",&n,&m);
+    int n = 0, m = 0;
+    scanf("%d %d", &n, &m);
     int arr1[MAX_ROWS][MAX_COLS] = {0};
     int arr2[MAX_ROWS][MAX_COLS] = {0};
-    int x=0, y=0;
+    int x = 0, y = 0;
 
-    //输入arr1
+    // 输入arr1
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -2925,14 +2924,14 @@ int main()
         }
     }
 
-    //输入arr2并判断
-    for(int i = 0; i < n; i++)
+    // 输入arr2并判断
+    for (int i = 0; i < n; i++)
     {
-        for(int j = 0; j < m; j++)
+        for (int j = 0; j < m; j++)
         {
             scanf("%d ", &arr2[i][j]);
 
-            if(arr1[i][j] != arr2[i][j])
+            if (arr1[i][j] != arr2[i][j])
             {
                 printf("No\n");
                 return 0;
@@ -2940,34 +2939,34 @@ int main()
         }
     }
     printf("Yes\n");
-    
+
     return 0;
 }
 
-//BC106 上三角矩阵判定
+// BC106 上三角矩阵判定
 #include <stdio.h>
 
 int main()
 {
     int n = 0;
-    scanf("%d",&n);
+    scanf("%d", &n);
     int arr[n][n];
 
-    //输入
-    for(int i = 0; i < n; i++)
+    // 输入
+    for (int i = 0; i < n; i++)
     {
-        for(int j = 0; j < n; j++)
+        for (int j = 0; j < n; j++)
         {
-            scanf("%d ",&arr[i][j]);
+            scanf("%d ", &arr[i][j]);
         }
     }
 
-    //判断并输出
-    for(int i = 0; i < n; i++)
+    // 判断并输出
+    for (int i = 0; i < n; i++)
     {
-        for(int j = 0; j < i; j++)
+        for (int j = 0; j < i; j++)
         {
-            if(arr[i][j] != 0)
+            if (arr[i][j] != 0)
             {
                 printf("NO\n");
                 return 0;
@@ -2979,101 +2978,101 @@ int main()
     return 0;
 }
 
-//BC107 矩阵转置
+// BC107 矩阵转置
 #include <stdio.h>
 
 int main()
 {
-    int n=0, m=0;
-    scanf("%d %d",&n,&m);
+    int n = 0, m = 0;
+    scanf("%d %d", &n, &m);
     int arr[n][m];
 
-    //输入
-    for(int i = 0; i < n; i++)
+    // 输入
+    for (int i = 0; i < n; i++)
     {
-        for(int j = 0; j < m; j++)
+        for (int j = 0; j < m; j++)
         {
-            scanf("%d ",&arr[i][j]);
+            scanf("%d ", &arr[i][j]);
         }
     }
 
-    for(int i = 0; i < m; i++)
+    for (int i = 0; i < m; i++)
     {
-        for(int j = 0; j < n; j++)
+        for (int j = 0; j < n; j++)
         {
-            printf("%d ",arr[j][i]);
+            printf("%d ", arr[j][i]);
         }
         printf("\n");
     }
-    
+
     return 0;
 }
 
-//BC108 矩阵交换
+// BC108 矩阵交换
 #include <stdio.h>
 
 int main()
 {
-    int n=0, m=0;
-    scanf("%d %d",&n,&m);
+    int n = 0, m = 0;
+    scanf("%d %d", &n, &m);
     int arr[n][m];
 
-    //输入
-    for(int i = 0; i < n; i++)
+    // 输入
+    for (int i = 0; i < n; i++)
     {
-        for(int j = 0; j < m; j++)
+        for (int j = 0; j < m; j++)
         {
-            scanf("%d",&arr[i][j]);
+            scanf("%d", &arr[i][j]);
         }
     }
 
-    int k = 0;  //统计次数
+    int k = 0; // 统计次数
     char t = 0;
-    int before=0, after=0; //变换的行（列）号
-    scanf("%d",&k);
+    int before = 0, after = 0; // 变换的行（列）号
+    scanf("%d", &k);
 
-    //判断并转换
-    while(k > 0)
+    // 判断并转换
+    while (k > 0)
     {
         int tmp = 0;
-        //这里有一个坑，就是在%c之前必须加一个空格，确保读取字符时跳过换行符或空格。
-        scanf(" %c %d %d",&t,&before,&after);
+        // 这里有一个坑，就是在%c之前必须加一个空格，确保读取字符时跳过换行符或空格。
+        scanf(" %c %d %d", &t, &before, &after);
 
-        if(t == 'r')
+        if (t == 'r')
         {
-            if(before <= n && before <= n)
+            if (before <= n && before <= n)
             {
-                for(int j = 0; j < m; j++)
+                for (int j = 0; j < m; j++)
                 {
-                    //交换after和before行，列不变
-                    tmp =arr[before-1][j];
-                    arr[before-1][j] = arr[after-1][j];
-                    arr[after-1][j] = tmp;
+                    // 交换after和before行，列不变
+                    tmp = arr[before - 1][j];
+                    arr[before - 1][j] = arr[after - 1][j];
+                    arr[after - 1][j] = tmp;
                 }
             }
         }
-        if(t == 'c')
+        if (t == 'c')
         {
-            if(before <= m && after <= m)
+            if (before <= m && after <= m)
             {
-                for(int i = 0; i < n; i++)
+                for (int i = 0; i < n; i++)
                 {
-                    //交换after和before列，行不变
-                    tmp = arr[i][before-1];
-                    arr[i][before-1] = arr[i][after-1];
-                    arr[i][after-1] = tmp;
+                    // 交换after和before列，行不变
+                    tmp = arr[i][before - 1];
+                    arr[i][before - 1] = arr[i][after - 1];
+                    arr[i][after - 1] = tmp;
                 }
             }
         }
         k--;
     }
 
-    //打印
-    for(int i = 0; i < n; i++)
+    // 打印
+    for (int i = 0; i < n; i++)
     {
-        for(int j = 0; j < m; j++)
+        for (int j = 0; j < m; j++)
         {
-            printf("%d ",arr[i][j]);
+            printf("%d ", arr[i][j]);
         }
         printf("\n");
     }
@@ -3081,31 +3080,31 @@ int main()
     return 0;
 }
 
-//BC109 杨辉三角
+// BC109 杨辉三角
 #include <stdio.h>
 
 int main()
 {
     int n = 0;
-    scanf("%d",&n);
+    scanf("%d", &n);
     int arr[n][n];
 
-    //输入
-    for(int i = 0; i < n; i++)
+    // 输入
+    for (int i = 0; i < n; i++)
     {
-        for(int j = 0; j <= i; j++)
+        for (int j = 0; j <= i; j++)
         {
-            //计算
-            if(j == 0 || i == j)
+            // 计算
+            if (j == 0 || i == j)
             {
                 arr[i][j] = 1;
             }
-            else 
+            else
             {
-                arr[i][j] = arr[i-1][j-1] +arr[i-1][j];
+                arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
             }
-            //输出
-            printf("%5d",arr[i][j]);
+            // 输出
+            printf("%5d", arr[i][j]);
         }
         printf("\n");
     }
@@ -3113,7 +3112,7 @@ int main()
     return 0;
 }
 
-//BC110 井字棋
+// BC110 井字棋
 #include <stdio.h>
 
 int main()
@@ -3121,51 +3120,51 @@ int main()
     char board[3][3] = {0};
     char flag = 0;
 
-    //输入
-    for(int i = 0; i < 3; i++)
+    // 输入
+    for (int i = 0; i < 3; i++)
     {
-        for(int j = 0; j < 3; j++)
+        for (int j = 0; j < 3; j++)
         {
-            scanf(" %c",&board[i][j]);
+            scanf(" %c", &board[i][j]);
         }
     }
 
-    //判断输赢
+    // 判断输赢
     for (int i = 0; i < 3; i++)
     {
-        //行
+        // 行
         if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][2] != 'O')
         {
             flag = board[i][2];
             break;
         }
-        //列
+        // 列
         if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[2][i] != 'O')
         {
             flag = board[2][i];
             break;
         }
     }
-    //正对角线
+    // 正对角线
     if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[2][2] != 'O')
     {
         flag = board[2][2];
     }
-    //反对角线
+    // 反对角线
     if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[2][0] != 'O')
     {
         flag = board[2][0];
     }
 
-    if(flag == 'K')
+    if (flag == 'K')
     {
         printf("KiKi wins!\n");
     }
-    else if(flag == 'B')
+    else if (flag == 'B')
     {
         printf("BoBo wins!\n");
-    }    
-    else 
+    }
+    else
     {
         printf("No winner!\n");
     }
@@ -3173,24 +3172,24 @@ int main()
     return 0;
 }
 
-//BC111 小乐乐与进制转换
+// BC111 小乐乐与进制转换
 #include <stdio.h>
 
-//转换方法
+// 转换方法
 void print(int x)
 {
-    if(x > 5)
+    if (x > 5)
     {
-        print(x/6);
+        print(x / 6);
     }
-    printf("%d",x%6);
+    printf("%d", x % 6);
 }
 
 int main()
 {
-    int n  = 0;
+    int n = 0;
 
-    while(scanf("%d",&n) != EOF)
+    while (scanf("%d", &n) != EOF)
     {
         print(n);
     }
@@ -3198,7 +3197,7 @@ int main()
     return 0;
 }
 
-//BC112 小乐乐求和
+// BC112 小乐乐求和
 #include <stdio.h>
 
 int main()
@@ -3206,19 +3205,19 @@ int main()
     long long n = 0;
     long long sum = 0;
 
-    //求和
-    while(scanf("%lld",&n) != EOF)
+    // 求和
+    while (scanf("%lld", &n) != EOF)
     {
-        sum += (1 + n)* n / 2; 
+        sum += (1 + n) * n / 2;
     }
 
-    //输出
-    printf("%lld",sum);
+    // 输出
+    printf("%lld", sum);
 
     return 0;
 }
 
-//BC113 小乐乐定闹钟
+// BC113 小乐乐定闹钟
 #include <stdio.h>
 
 int main()
@@ -3227,85 +3226,86 @@ int main()
     int minute = 0;
     int k = 0;
 
-    while(scanf("%d:%d %d",&hour,&minute,&k) != EOF)
+    while (scanf("%d:%d %d", &hour, &minute, &k) != EOF)
     {
-        //计算
-        int remainingMinutes = (k+minute) % 60;
-        int actualHour = (hour + (k+minute) / 60)%24;
+        // 计算
+        int remainingMinutes = (k + minute) % 60;
+        int actualHour = (hour + (k + minute) / 60) % 24;
 
-        printf("%02d:%02d\n",actualHour,remainingMinutes);
+        printf("%02d:%02d\n", actualHour, remainingMinutes);
     }
 
     return 0;
 }
 
-//BC114 小乐乐排电梯
+// BC114 小乐乐排电梯
 #include <stdio.h>
 
 int main()
 {
-    int n  = 0;
-    scanf("%d",&n);
+    int n = 0;
+    scanf("%d", &n);
 
-    //计算并输出
-    if(n>=0 && n < 12)
+    // 计算并输出
+    if (n >= 0 && n < 12)
     {
-        printf("%d\n",2);
+        printf("%d\n", 2);
     }
-    else if(n >= 12)
+    else if (n >= 12)
     {
-        printf("%d\n",4*(n/12) + 2);
+        printf("%d\n", 4 * (n / 12) + 2);
     }
 
     return 0;
 }
 
-//BC115 小乐乐与欧几里得
+// BC115 小乐乐与欧几里得
 #include <stdio.h>
 
 int main()
 {
-    long long n  = 0;
-    long long m  = 0;
-    long long commonDivisors  = 0;//保存公约数
-    long long  commonMultiples = n*m;//保存公倍数
-    
-    while (scanf("%lld %lld",&n, &m) != EOF) 
+    long long n = 0;
+    long long m = 0;
+    long long commonDivisors = 0;      // 保存公约数
+    long long commonMultiples = n * m; // 保存公倍数
+
+    while (scanf("%lld %lld", &n, &m) != EOF)
     {
-        long long num = n*m;        //存放两个整数相乘的值
-        while((commonDivisors = n % m) != 0)
+        long long num = n * m; // 存放两个整数相乘的值
+        while ((commonDivisors = n % m) != 0)
         {
-            //辗转相除法求最大公约数，当ret=0时m就是最大公约数
+            // 辗转相除法求最大公约数，当ret=0时m就是最大公约数
             n = m;
-            m = commonDivisors;     //m就是最大公约数
+            m = commonDivisors; // m就是最大公约数
         }
-        commonMultiples = num/m;//两个数的乘积= 最大公约数*最小公倍数
-        printf("%lld\n",m+commonMultiples);
+        commonMultiples = num / m; // 两个数的乘积= 最大公约数*最小公倍数
+        printf("%lld\n", m + commonMultiples);
     }
 
     return 0;
 }
 
-//BC116 小乐乐改数字
+// BC116 小乐乐改数字
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int n;
     scanf("%d", &n);
 
     int ret = 0;
     int placeValue = 1; // 用于构建结果的位数权重，从1开始
 
-    while (n > 0) 
+    while (n > 0)
     {
         int digit = n % 10;
 
         // 根据奇偶性设置当前位的值
-        if (digit % 2 == 0) 
+        if (digit % 2 == 0)
         {
             ret += 0 * placeValue;
-        } 
-        else 
+        }
+        else
         {
             ret += 1 * placeValue;
         }
@@ -3321,45 +3321,45 @@ int main() {
     return 0;
 }
 
-//BC118 小乐乐与序列
+// BC118 小乐乐与序列
 #include <stdio.h>
 #include <stdlib.h>
 
-int Compare(const void*e1, const void*e2)
+int compare(const void *e1, const void *e2)
 {
-    return *(int*)e1-*(int*)e2;
+    return *(int *)e1 - *(int *)e2;
 }
 
 int main()
 {
-    int n  = 0;
-    scanf("%d",&n);
+    int n = 0;
+    scanf("%d", &n);
     int arr[n];
     int count = 0;
 
-    //输入
-    for(int i = 0; i < n; i++)
+    // 输入
+    for (int i = 0; i < n; i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d", &arr[i]);
     }
 
-    //排序
-    qsort(arr,n,sizeof(int),Compare);
+    // 排序
+    qsort(arr, n, sizeof(int), compare);
 
-    //输出
-    for(int i = 0; i < n; i++)
+    // 输出
+    for (int i = 0; i < n; i++)
     {
-        if(arr[i] == arr[i+1])
+        if (arr[i] == arr[i + 1])
         {
-            continue;            
+            continue;
         }
-        printf("%d ",arr[i]);
+        printf("%d ", arr[i]);
     }
 
     return 0;
 }
 
-//BC119 小乐乐与字符串
+// BC119 小乐乐与字符串
 #include <stdio.h>
 /*
 可以先找到所有的C然后用所有的C去匹配所有的H，找到所有的CH之后再用所有CH匹配N组合成CHN
@@ -3368,44 +3368,43 @@ CHNNCCHN:
 你先找到所有的C：总共有3个-->之后用这3个C去找H：一个C可对应2个H则3个C可对应出6个CH
 用你找到的6个CH去匹配N-->一个CH对应可对应3个N 则6个CH可对应出18个CHN所以可以找到18个CHN
 */
-int main() 
+int main()
 {
     long long c = 0;
     long long ch = 0;
     long long chn = 0;
     char arr[8001] = {0};
-    scanf("%s",arr);
-    char* p = arr;
+    scanf("%s", arr);
+    char *p = arr;
 
-    while(*p)
+    while (*p)
     {
-        if(*p == 'C')
+        if (*p == 'C')
         {
             c++;
         }
-        else if(*p =='H')
+        else if (*p == 'H')
         {
             ch += c;
         }
-        else if(*p == 'N')
+        else if (*p == 'N')
         {
             chn += ch;
         }
         p++;
     }
-    printf("%lld",chn);
-    
+    printf("%lld", chn);
+
     return 0;
 }
 
-//BC120 小乐乐与二段数
+// BC120 小乐乐与二段数
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-
 // 判断一个数是否为二段数并且是n的倍数
-int is_binary_segmented_number(int num, int n) 
+int is_binary_segmented_number(int num, int n)
 {
     char num_str[20];
     sprintf(num_str, "%d", num); // 将数字转换为字符串
@@ -3414,44 +3413,44 @@ int is_binary_segmented_number(int num, int n)
     // 检查数字是否恰好包含两种不同的数字
     char s = num_str[0];
     char t = num_str[0];
-    for (int i = 0; i < len; ++i) 
+    for (int i = 0; i < len; ++i)
     {
-        if (num_str[i] != s && num_str[i] != t) 
+        if (num_str[i] != s && num_str[i] != t)
         {
             t = num_str[i];
             break;
         }
     }
-    if (s == t) 
+    if (s == t)
     {
-        return 0; // 不是二段数 
+        return 0; // 不是二段数
     }
 
     // 确保所有的s出现在所有的t之前
-    for (int i = 0; i < len; ++i) 
+    for (int i = 0; i < len; ++i)
     {
-        if (num_str[i] == t) 
+        if (num_str[i] == t)
         {
             return 0; // 发现t在s之前，不是二段数
         }
     }
-    
+
     // 检查是否是n的倍数
-    if (num % n != 0) 
+    if (num % n != 0)
     {
         return 0;
     }
-    
+
     return 1; // 是二段数并且是n的倍数
 }
 
 // 寻找大于n且是n的倍数的最小二段数
 int find_next_binary_segmented_number(int n)
 {
-    int condidate = n+1;
-    while(1)
+    int condidate = n + 1;
+    while (1)
     {
-        if(is_binary_segmented_number(condidate, n))
+        if (is_binary_segmented_number(condidate, n))
         {
             return condidate;
         }
@@ -3462,15 +3461,617 @@ int find_next_binary_segmented_number(int n)
 int main()
 {
     int n = 0;
-    while (scanf("%d",&n) != EOF) 
+    while (scanf("%d", &n) != EOF)
     {
-        if(n == 0)
+        if (n == 0)
         {
             break;
         }
         int result = find_next_binary_segmented_number(n);
-        printf("%d: %d\n",n,result);
+        printf("%d: %d\n", n, result);
     }
 
     return 0;
 }
+
+// BC121 小乐乐学编程
+#include <stdio.h>
+
+int main()
+{
+    printf("Practice makes perfect!\n");
+}
+
+// BC122 小乐乐算平均分
+#include <stdio.h>
+
+int main()
+{
+    double arr[3] = {0.0};
+    double sum = 0.0;
+
+    // 输入并计算
+    for (int i = 0; i < 3; i++)
+    {
+        scanf("%lf", &arr[i]);
+        sum += arr[i];
+    }
+
+    // 输出
+    printf("%.2lf %.2lf", sum, sum / 3.0);
+
+    return 0;
+}
+
+// BC123 小乐乐找最大数
+#include <stdio.h>
+
+int main()
+{
+    int arr[4] = {0};
+    int max = arr[0];
+
+    // 输入
+    for (int i = 0; i < 4; i++)
+    {
+        scanf("%d", &arr[i]);
+
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+
+    // 输出
+    printf("%d\n", max);
+
+    return 0;
+}
+
+// BC124 小乐乐是否被叫家长
+#include <stdio.h>
+
+int main()
+{
+    int arr[3] = {0};
+    int sum = 0;
+
+    // 输入
+    for (int i = 0; i < 3; i++)
+    {
+        scanf("%d", &arr[i]);
+        sum += arr[i];
+    }
+
+    // 判断并输出
+    if (sum / 3 >= 60)
+    {
+        printf("NO\n");
+    }
+    else
+    {
+        printf("YES\n");
+    }
+
+    return 0;
+}
+
+// BC125 小乐乐转换成绩
+#include <stdio.h>
+
+int main()
+{
+    int score = 0;
+    int num = 0;
+
+    // 输入
+    scanf("%d", &score);
+
+    // 判断并输出
+    if (score >= 0 && score <= 100)
+    {
+        switch (score / 10)
+        {
+        case 10:
+        case 9:
+            printf("A\n");
+            break;
+        case 8:
+            printf("B\n");
+            break;
+        case 7:
+            printf("C\n");
+            break;
+        case 6:
+            printf("D\n");
+            break;
+        case 5:
+        case 4:
+        case 3:
+        case 2:
+        case 1:
+        case 0:
+            printf("E\n");
+            break;
+        default:
+            break;
+        }
+    }
+    else
+    {
+        printf("F\n");
+    }
+
+    return 0;
+}
+
+//BC126 小乐乐算多少人被请家长
+#include <stdio.h>
+
+    int
+    main()
+{
+    int n = 0;
+    int count = 0;
+    scanf("%d", &n);
+
+    // 输入并判断
+    for (int i = 0; i < n; i++)
+    {
+        int sum = 0;
+        int score = 0;
+        for (int j = 0; j < 3; j++)
+        {
+            scanf("%d ", &score);
+            sum += score;
+        }
+        if (sum / 3 < 60)
+        {
+            count++;
+        }
+    }
+
+    // 输出
+    printf("%d\n", count);
+
+    return 0;
+}
+
+// BC127 小乐乐算最高分
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d", &n);
+    int arr[n];
+
+    // 输入并判断
+    int max = arr[0];
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+
+    // 输出
+    printf("%d", max);
+
+    return 0;
+}
+
+// BC128 小乐乐计算求和
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d", &n);
+
+    // 计算
+    int factorial = 1, sum = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        factorial *= i; // 暂存，然后依次相加
+        sum += factorial;
+    }
+
+    // 输出
+    printf("%d\n", sum);
+
+    return 0;
+}
+
+// BC129 小乐乐计算函数
+#include <stdio.h>
+
+// 求三个数的最大值
+int max3(int a, int b, int c)
+{
+    if (a > b)
+    {
+        b = a;
+    }
+
+    return b > c ? b : c;
+}
+
+int main()
+{
+    int a = 0, b = 0, c = 0;
+    scanf("%d %d %d", &a, &b, &c);
+
+    // 输出
+    printf("%.2lf", (double)max3(a + b, b, c) / (max3(a, b + c, c) + max3(a, b, b + c)));
+
+    return 0;
+}
+
+// BC130 小乐乐查找数字
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d", &n);
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    int x = 0;
+    scanf("%d", &x);
+
+    // 查找
+    int count = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == x)
+        {
+            count++;
+        }
+    }
+
+    // 输出
+    printf("%d", count);
+
+    return 0;
+}
+
+// BC131 KiKi学程序设计基础
+#include <stdio.h>
+
+int main()
+{
+    printf("printf(\"Hello world!\\n\");\n");
+    printf("cout << \"Hello world!\" << endl;");
+    return 0;
+}
+
+// BC132 KiKi算期末成绩
+#include <stdio.h>
+
+int main()
+{
+    int experiment_grade = 0;
+    int class_grade = 0;
+    int process_grade = 0;
+    int computer_lab_grade = 0;
+    scanf("%d %d %d %d", &experiment_grade, &class_grade, &process_grade, &computer_lab_grade);
+
+    // 输出
+    printf("%.1f\n", experiment_grade * 0.2 + class_grade * 0.1 + process_grade * 0.2 + computer_lab_grade * 0.5);
+
+    return 0;
+}
+
+// BC133 KiKi说祝福语
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d", &n);
+    while (n--)
+    {
+        printf("Happy new year!Good luck!\n");
+    }
+
+    return 0;
+}
+
+// BC134 KiKi的最高分
+#include <stdio.h>
+
+int main()
+{
+    int arr[3] = {0};
+
+    // 输入并判断
+    int max = arr[0];
+    for (int i = 0; i < 3; i++)
+    {
+        scanf("%d", &arr[i]);
+        if (arr[i] > max)
+        {
+            max = arr[i];
+        }
+    }
+
+    // 输出
+    printf("%d", max);
+
+    return 0;
+}
+
+// BC135 KiKi求质数个数
+#include <stdio.h>
+
+int main()
+{
+    int count = 0;
+
+    // 计算并统计
+    for (int i = 100; i < 1000; i++)
+    {
+        int flag = 1;
+        for (int j = 2; j < i; j++)
+        {
+            if (i % j == 0)
+            {
+                flag = 0;
+            }
+        }
+        if (flag == 1)
+        {
+            count++;
+        }
+    }
+
+    // 输出
+    printf("%d\n", count);
+
+    return 0;
+}
+
+// BC136 KiKi去重整数并排序(同BC118)
+#include <stdio.h>
+#include <stdlib.h>
+
+int compare(const void *e1, const void *e2)
+{
+    return *(int *)e1 - *(int *)e2;
+}
+
+int main()
+{
+    int n = 0;
+    scanf("%d", &n);
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // 排序
+    qsort(arr, n, sizeof(int), compare);
+
+    // 输出
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i] == arr[i + 1])
+        {
+            continue;
+        }
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
+
+// BC137 KiKi判断上三角矩阵(同BC106)
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d", &n);
+    int arr[n][n];
+
+    // 输入
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            scanf("%d ", &arr[i][j]);
+        }
+    }
+
+    // 判断并输出
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            if (arr[i][j] != 0)
+            {
+                printf("NO\n");
+                return 0;
+            }
+        }
+    }
+    printf("YES\n");
+
+    return 0;
+}
+
+//BC138 KiKi学结构体和指针
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef int SLDataType;
+
+//创建结构体
+typedef struct Node
+{
+    SLDataType data;
+    struct Node *next;
+}Node;
+
+//初始化链表，返回头节点指针
+Node* init_link_list()
+{
+    Node* head = (Node*) malloc(sizeof(Node));
+
+    //初始化头节点指针指向NULL
+    head->next = NULL;
+
+    return head;
+}
+
+//在链表末尾插入节点
+void insert_node(Node* head,int data)
+{
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data = data;
+    newNode->next = NULL;
+
+    Node* p = head;
+    while (p->next != NULL) 
+    {
+        p = p->next;
+    }
+    p->next = newNode;
+}
+
+// 删除链表中所有值为target的节点
+void delete_node(Node* head,int target)
+{
+    Node* prev = head;
+    Node* cur = head->next;
+
+    while(cur != NULL)
+    {
+        if(cur->data == target)
+        {
+            prev->next = cur->next;
+            free(cur);
+            cur = prev->next;
+        }
+        else 
+        {
+            prev = cur;
+            cur = cur->next;
+        }
+    }
+}
+
+//打印链表
+void print_link_list(Node* head)
+{
+    Node* p = head->next; //跳过头节点head
+
+    while(p != NULL)
+    {
+        printf("%d ",p->data);
+        p = p->next;
+    }
+    printf("\n");
+}
+
+//释放链表空间
+void free_link_list(Node* head)
+{
+    Node* p = head;
+    
+    while(p != NULL)
+    {
+        Node* tmp = p;
+        p = p->next;
+        free(tmp);
+    }
+}
+
+int main() 
+{
+    int n = 0;
+    scanf("%d", &n);
+
+    // 初始化链表
+    Node *head = init_link_list(); 
+
+    // 输入数据建立链表
+    for (int i = 0; i < n; ++i) 
+    {
+        SLDataType data;
+        scanf("%d", &data);
+        insert_node(head, data);
+    }
+
+    // 输入要删除的数据m
+    int m = 0;
+    scanf("%d", &m);
+
+    // 删除链表中所有值为m的节点
+    delete_node(head, m);
+
+    // 计算删除后的链表长度并输出
+    int length = 0;
+    Node *p = head->next; // 跳过头结点
+    while (p != NULL) 
+    {
+        length++;
+        p = p->next;
+    }
+    printf("%d\n", length);
+
+    // 输出删除数据后的链表
+    print_link_list(head);
+
+    // 释放链表空间
+    free_link_list(head);
+
+    return 0;
+}
+
+//BC139 KiKi定义电子日历类
+#include <stdio.h>
+
+struct Date
+{
+    int year;
+    int month;
+    int day;    
+}date;
+
+int main() 
+{
+    scanf("%d%d%d", &date.year, &date.month, &date.day);
+
+    printf("%d/%d/%d\n", date.day, date.month, date.year);
+
+    return 0;
+}
+
+//BC140 KiKi设计类继承
+#include <stdio.h>
+
+int main() 
+{
+    int a,b;
+    scanf("%d %d",&a,&b);
+    int  r;
+    scanf("%d",&c);
+    int d;
+    scanf("%d",&d);
+
+    printf("%d\n",a*b);
+    printf("%g\n",3.14*(r*r));
+    printf("%d\n",d*d);
+
+    return 0;
+}
+
+//
