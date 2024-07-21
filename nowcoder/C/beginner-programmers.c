@@ -3605,11 +3605,10 @@ int main()
     return 0;
 }
 
-//BC126 小乐乐算多少人被请家长
+// BC126 小乐乐算多少人被请家长
 #include <stdio.h>
 
-    int
-    main()
+int main()
 {
     int n = 0;
     int count = 0;
@@ -3907,39 +3906,39 @@ int main()
     return 0;
 }
 
-//BC138 KiKi学结构体和指针
+// BC138 KiKi学结构体和指针
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef int SLDataType;
 
-//创建结构体
+// 创建结构体
 typedef struct Node
 {
     SLDataType data;
     struct Node *next;
-}Node;
+} Node;
 
-//初始化链表，返回头节点指针
-Node* init_link_list()
+// 初始化链表，返回头节点指针
+Node *init_link_list()
 {
-    Node* head = (Node*) malloc(sizeof(Node));
+    Node *head = (Node *)malloc(sizeof(Node));
 
-    //初始化头节点指针指向NULL
+    // 初始化头节点指针指向NULL
     head->next = NULL;
 
     return head;
 }
 
-//在链表末尾插入节点
-void insert_node(Node* head,int data)
+// 在链表末尾插入节点
+void insert_node(Node *head, int data)
 {
-    Node* newNode = (Node*)malloc(sizeof(Node));
+    Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = data;
     newNode->next = NULL;
 
-    Node* p = head;
-    while (p->next != NULL) 
+    Node *p = head;
+    while (p->next != NULL)
     {
         p = p->next;
     }
@@ -3947,20 +3946,20 @@ void insert_node(Node* head,int data)
 }
 
 // 删除链表中所有值为target的节点
-void delete_node(Node* head,int target)
+void delete_node(Node *head, int target)
 {
-    Node* prev = head;
-    Node* cur = head->next;
+    Node *prev = head;
+    Node *cur = head->next;
 
-    while(cur != NULL)
+    while (cur != NULL)
     {
-        if(cur->data == target)
+        if (cur->data == target)
         {
             prev->next = cur->next;
             free(cur);
             cur = prev->next;
         }
-        else 
+        else
         {
             prev = cur;
             cur = cur->next;
@@ -3968,42 +3967,42 @@ void delete_node(Node* head,int target)
     }
 }
 
-//打印链表
-void print_link_list(Node* head)
+// 打印链表
+void print_link_list(Node *head)
 {
-    Node* p = head->next; //跳过头节点head
+    Node *p = head->next; // 跳过头节点head
 
-    while(p != NULL)
+    while (p != NULL)
     {
-        printf("%d ",p->data);
+        printf("%d ", p->data);
         p = p->next;
     }
     printf("\n");
 }
 
-//释放链表空间
-void free_link_list(Node* head)
+// 释放链表空间
+void free_link_list(Node *head)
 {
-    Node* p = head;
-    
-    while(p != NULL)
+    Node *p = head;
+
+    while (p != NULL)
     {
-        Node* tmp = p;
+        Node *tmp = p;
         p = p->next;
         free(tmp);
     }
 }
 
-int main() 
+int main()
 {
     int n = 0;
     scanf("%d", &n);
 
     // 初始化链表
-    Node *head = init_link_list(); 
+    Node *head = init_link_list();
 
     // 输入数据建立链表
-    for (int i = 0; i < n; ++i) 
+    for (int i = 0; i < n; ++i)
     {
         SLDataType data;
         scanf("%d", &data);
@@ -4020,7 +4019,7 @@ int main()
     // 计算删除后的链表长度并输出
     int length = 0;
     Node *p = head->next; // 跳过头结点
-    while (p != NULL) 
+    while (p != NULL)
     {
         length++;
         p = p->next;
@@ -4036,17 +4035,17 @@ int main()
     return 0;
 }
 
-//BC139 KiKi定义电子日历类
+// BC139 KiKi定义电子日历类
 #include <stdio.h>
 
 struct Date
 {
     int year;
     int month;
-    int day;    
-}date;
+    int day;
+} date;
 
-int main() 
+int main()
 {
     scanf("%d%d%d", &date.year, &date.month, &date.day);
 
@@ -4055,23 +4054,160 @@ int main()
     return 0;
 }
 
-//BC140 KiKi设计类继承
+// BC140 KiKi设计类继承
 #include <stdio.h>
 
-int main() 
+int main()
 {
-    int a,b;
-    scanf("%d %d",&a,&b);
-    int  r;
-    scanf("%d",&c);
+    int a, b;
+    scanf("%d %d", &a, &b);
+    int r;
+    scanf("%d", &c);
     int d;
-    scanf("%d",&d);
+    scanf("%d", &d);
 
-    printf("%d\n",a*b);
-    printf("%g\n",3.14*(r*r));
-    printf("%d\n",d*d);
+    printf("%d\n", a * b);
+    printf("%g\n", 3.14 * (r * r));
+    printf("%d\n", d * d);
 
     return 0;
 }
 
-//
+// BC141 圣诞树
+#include <stdio.h>
+
+int main()
+{
+    // 一、先打印上面“树叶”部分
+    int high = 0; // 层数
+    scanf("%d", &high);
+
+    int m = 3 * high;
+    for (int i = 1; i <= high; i++)
+    {
+        // 打印第i层的第一行
+        int space1 = m - 1;
+        for (int j = 0; j < space1; j++)
+        {
+            printf(" ");
+        }
+
+        // 打印每层三角形的第一行
+        for (int k = 0; k < i; k++)
+        {
+            printf("*     ");
+        }
+        printf("\n");
+
+        // 打印第i层的第二行
+        int space2 = m - 2;
+        for (int j = 0; j < space2; j++)
+        {
+            printf(" ");
+        }
+
+        // 打印每层三角形的第二行
+        for (int k = 0; k < i; k++)
+        {
+            printf("* *   ");
+        }
+        printf("\n");
+
+        // 打印第i层的第三行
+        int space3 = m - 3;
+        for (int j = 0; j < space3; j++)
+        {
+            printf(" ");
+        }
+
+        // 打印每层三角形的第三行
+        for (int k = 0; k < i; k++)
+        {
+            printf("* * * ");
+        }
+        printf("\n");
+
+        m -= 3; // 每层少打3个空格
+    }
+
+    // 二、底部
+    for (int i = 0; i < high; i++)
+    {
+        for (int j = 0; j < 3 * high - 1; j++)
+        {
+            printf(" ");
+        }
+        printf("*\n");
+    }
+
+    return 0;
+}
+
+// BC142 超级圣诞树
+#include <stdio.h>
+
+int main()
+{
+    int n = 0;
+    scanf("%d", &n);
+    int i, j, k;
+    int row = 3;
+    int col = 5;
+    // 行数 = 3 * pow(2,n-1) 列数 = 5 * pow(2,n-1)
+    char ch[400][800] = {"  *  ", " * * ", "* * *"};
+    for (i = 0; i < n - 1; i++)
+    {
+        for (j = 0; j < row; j++)
+        {
+            for (k = 0; k < col; k++)
+            {
+                ch[j + row][k] = ch[j][k]; // 左下角的图形复制
+                ch[j + row][k + 1 + col] = ch[j][k];
+            }
+        }
+        // 清空原来的三角位置
+        for (j = 0; j < row; j++)
+        {
+            for (k = 0; k < col; k++)
+                ch[j][k] = ' ';
+        }
+        // 将左下角的三角复制到两个中间去
+        for (j = 0; j < row; j++)
+        {
+            for (k = 0; k < col; k++)
+            {
+                ch[j][k + row] = ch[j + row][k];
+            }
+        }
+        row *= 2;          // 当前的行数
+        col = col * 2 + 1; // 当前的列数
+    }
+    // 打印出来
+    for (j = 0; j < row; j++)
+    {
+        for (k = 0; k < col; k++)
+        {
+            if (ch[j][k] == '*')
+            {
+                printf("%c", ch[j][k]);
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+    // 打印树干
+    for (j = 0; j < n; j++)
+    {
+        for (k = 0; k < row - 1; k++)
+        {
+            printf(" ");
+        }
+        printf("*\n");
+    }
+
+    return 0;
+}
