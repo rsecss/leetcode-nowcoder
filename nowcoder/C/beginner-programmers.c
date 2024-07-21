@@ -3474,6 +3474,85 @@ int main()
     return 0;
 }
 
+//CSDN解法
+#include <stdio.h>
+#include <stdbool.h>
+const int maxn = 10010;   //表示最大的位数长度
+int a[maxn], b[maxn];
+//例如999999993  就可以看做个8个9   1个3
+//对应四个变量 我们存储一下  m个s和n个t组成
+//二段数m,s,n,t除以N的余数等于(a[m]*b[n]*s+a[n]*t) mod N。
+int m, total, s, t, aptotal, apm, aps, apt, k;//我们让total来存储这个数的位数 这样n就可以用total-m来赋值
+int n; //注意这里的n是我们要输入的值
+bool ck()
+{
+	int p, r;
+	//我们让p储存s，r存储t
+	if (total > 5)
+		return 1;
+	p = s;
+	r = t;
+	for (int q = 0; q < m; q++)
+	{
+		p = p * 10 + s;
+	}
+	//我们需要将p扩10的total-m次方
+	for (int q = 0; q < total - m; q++)
+		p = p * 10;
+	for (int q = 1; q < total - m; q++)
+		r = r * 10 + t;
+	return p + r > n;
+}
+int main()
+{
+	while (scanf("%d", &n), n)
+	{
+		printf("%d: ", n);
+		if (n == 1) 
+        {
+			puts("10");
+			continue;
+		}
+		//下面我们来介绍a数组和b数组含义
+		//a[1]=1 a[i+1]=(a[i]*10+1)%n; i = 1,2,3,… a[i]就是连续i个1除以N的余数
+		//b[0]=1 b[i+1]=(b[i]*10)%n; i = 0,1,2,3,… b[i]就是10的i次方除以N的余数。
+		a[0] = 1;
+		b[0] = 1;
+		//下面我们就要初始化a，b数组了
+		for (int i = 1; i < 9999; i++)
+			a[i] = (a[i - 1] * 10 + 1) % n;
+		for (int i = 1; i < 999; i++)
+			b[i] = b[i - 1] * 10 % n;
+		//我们让total来存储这个数的位数 这样n就可以用total-m来赋值
+		//接下来接下来只要枚举m,s,n,t就可以了。按照(m+n)的值从小到大枚举，(m+n)确定后枚举m，则n可以直接计算出来，不需要枚举。m和n确定之后枚举s和t。一旦找到解，后面的(m+n)值就不需要继续枚举下去了。
+		for (total = 1, aps = 0; total < 9999; total++) 
+        {
+			k = 0;
+			if ((n % 10 == 0 || n % 25 == 0) && total > 11)
+				k = total - 11;
+			for (m = k; m < total; m++)
+				for (s = 1; s < 10; s++)
+					for (t = 0; t < (n % 10 ? 10 : 1); t++)
+						if (t != s && (((long long)a[m]) * b[total - m] * s + a[total - m - 1] * t) % n == 0 && ck() &&
+							(!aps || s < aps))
+						{
+							aptotal = total;
+							apm = m;
+							aps = s;
+							apt = t;
+						}
+			if (aps)
+				break;
+		}
+		for (int x = 0; x < apm + 1; x++)
+			printf("%d", aps);
+		for (int x = 0; x < aptotal - apm; x++)
+			printf("%d", apt);
+		printf("\n");
+	}
+	return 0;
+}
+
 // BC121 小乐乐学编程
 #include <stdio.h>
 
