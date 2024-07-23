@@ -24,7 +24,6 @@ int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
                 *returnSize = 2;//返回数组长度
                 return ret;
             }
-           
         }
     }
     //如果没有找到
