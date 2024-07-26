@@ -18,7 +18,7 @@ class Solution {
 
             // 当窗口和大于等于 target 时，尝试从左缩小窗口
             while (sum >= target) {
-                result = Math.min(result, right - left + 1);
+                result = Math.min(result, right - left + 1); //保留原来的最小数组的的大小，后相继比较，最后选出最小数组
                 sum -= nums[left++]; // 从窗口中移除左侧元素并移动左指针
             }
         }
