@@ -4,6 +4,8 @@
 
 ## 刷题记录
 
+说明: 补充题目不是来自leetcode，而是来自代码随想录推荐
+
 ### 数组
 
 1. [704. 二分查找](leetcode\Java\704.二分查找.java)
@@ -12,6 +14,7 @@
 4. [209. 长度最小的子数组](leetcode\Java\209.长度最小的子数组.java)
 5. [59. 螺旋矩阵-ii](leetcode\Java\59.螺旋矩阵-ii.java)
 6. [58. 区间和——补充题目](leetcode\Java\58.区间和.java)
+7. [44. 开发商购土地——补充题目](leetcode\Java\44.开发商购买土地.java)
 
 ### 链表
 
