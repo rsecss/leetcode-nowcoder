@@ -21,6 +21,7 @@
 1. [203. 移除链表元素](leetcode\Java\203.移除链表元素.java)
 2. [707. 设计链表](leetcode\Java\707.设计链表.java)
 3. [206. 反转链表](leetcode\Java\206.反转链表.java)
+4. [24. 两两交换链表中的节点](leetcode\Java\24.两两交换链表中的节点.java)
 
 ### 哈希表
 
