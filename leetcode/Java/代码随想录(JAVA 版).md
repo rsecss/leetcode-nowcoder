@@ -1,6 +1,6 @@
 # 代码随想录
 
-推荐题目转载自: [代码随想录](https://www.programmercarl.com)
+推荐题目转载自: [@代码随想录](https://www.programmercarl.com)
 
 ## 刷题记录
 
@@ -22,6 +22,7 @@
 2. [707. 设计链表](leetcode\Java\707.设计链表.java)
 3. [206. 反转链表](leetcode\Java\206.反转链表.java)
 4. [24. 两两交换链表中的节点](leetcode\Java\24.两两交换链表中的节点.java)
+5. [19. 删除链表的倒数第-n-个结点](leetcode\Java\19.删除链表的倒数第-n-个结点.java)
 
 ### 哈希表
 
