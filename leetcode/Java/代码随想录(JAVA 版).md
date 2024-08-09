@@ -31,6 +31,7 @@
 1. [242. 有效的字母异位词](leetcode\Java\242.有效的字母异位词.java)
 2. [349. 两个数组的交集](leetcode\Java\349.两个数组的交集.java)
 3. [202. 快乐数](leetcode\Java\202.快乐数.java)
+4. [1. 两数之和](leetcode\Java\1.两数之和.java)
 
 ### 字符串
 
