@@ -33,6 +33,7 @@
 3. [202. 快乐数](leetcode\Java\202.快乐数.java)
 4. [1. 两数之和](leetcode\Java\1.两数之和.java)
 5. [454. 四数相加-ii](leetcode\Java\454.四数相加-ii.java)
+6. [383. 赎金信](leetcode\Java\383.赎金信.java)
 
 ### 字符串
 
