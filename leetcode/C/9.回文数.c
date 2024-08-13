@@ -5,22 +5,22 @@
  */
 
 // @lc code=start
-bool isPalindrome(int x) {
-   if(x<0 || (x % 10 == 0 && x != 0))
-   {
-    return false;
-   }
+bool isPalindrome(int x)
+{
+    if (x < 0 || (x % 10 == 0 && x != 0))
+    {
+        return false;
+    }
 
-   long int original = x;
-   long int reversed = 0;
+    long int original = x;
+    long int reversed = 0;
 
-    while(x>0)
-    { 
-        reversed = reversed*10 + x%10;
+    while (x > 0)
+    {
+        reversed = reversed * 10 + x % 10;
         x /= 10;
     }
 
-    return original==reversed || original==reversed/10;
+    return original == reversed || original == reversed / 10;
 }
 // @lc code=end
-

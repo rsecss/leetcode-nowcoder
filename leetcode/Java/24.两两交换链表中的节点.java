@@ -24,7 +24,7 @@ class Solution {
             ListNode node1 = cur.next;
             ListNode node2 = cur.next.next;
 
-            /*cur->1->2->3->4转变成cur->2->1->3->4*/
+            /* 「cur->1->2->3->4」 转变成 「cur->2->1->3->4」 */
             cur.next = node2;
             node1.next = node2.next;
             node2.next = node1;

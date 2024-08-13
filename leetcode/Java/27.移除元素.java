@@ -8,7 +8,7 @@
 class Solution {
     public int removeElement(int[] nums, int val) {
     
-        //法一：快慢指针
+        // 法一：快慢指针
         int slowIndex = 0;
         for (int fastIndex = 0; fastIndex < nums.length; fastIndex++) {
             if (nums[fastIndex] != val) {
@@ -18,7 +18,7 @@ class Solution {
         }
         return slowIndex;
 
-        //法二：相向指针法
+        // 法二：相向指针法
         int left = 0;
         int right = nums.length - 1;
         while (left <= right) {
@@ -26,7 +26,7 @@ class Solution {
                 nums[left] = nums[right];
                 right--;
             } else {
-                // 这里兼容了right指针指向的值与val相等的情况
+                // 这里兼容了 right 指针指向的值与 val 相等的情况
                 left++;
             }
         }

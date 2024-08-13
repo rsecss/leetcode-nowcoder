@@ -23,9 +23,9 @@ class MyLinkedList {
     // 初始化节点
     public MyLinkedList() {
         size = 0;
-        head = new ListNode(0); // 创建一个虚拟头节点head
+        head = new ListNode(0); // 创建一个虚拟头节点 head
     }
-    // 获取第index个节点的数值，注意index是从0开始的，第0个节点就是头结点
+    // 获取第 index 个节点的数值，注意 index 是从 0 开始的，第 0 个节点就是头结点
     public int get(int index) {
         // 判断是否合法
         if (index < 0 || index >= size) {
@@ -40,7 +40,7 @@ class MyLinkedList {
         return cur.val;
     }
     
-    // 在链表的表头添加一个新的表头，等价于在第0个元素前添加
+    // 在链表的表头添加一个新的表头，等价于在第 0 个元素前添加
     public void addAtHead(int val) {
         ListNode newNode = new ListNode(val);
         newNode.next = head.next;
@@ -60,7 +60,7 @@ class MyLinkedList {
         size++;
     }
 
-    // 在第 index 个节点之前插入一个新节点，例如index为0，那么新插入的节点为链表的新头节点。
+    // 在第 index 个节点之前插入一个新节点，例如 index 为 0，那么新插入的节点为链表的新头节点。
     // 如果 index 等于链表的长度，则说明是新插入的节点为链表的尾结点
     // 如果 index 大于链表的长度，则返回空    
     public void addAtIndex(int index, int val) {
@@ -82,13 +82,13 @@ class MyLinkedList {
         size++;
     }
     
-    // 删除第index节点
+    // 删除第 index 节点
     public void deleteAtIndex(int index) {
         if (index < 0 || index >= size) {
             return;
         }
         
-        // 因为有虚拟头节点，所以不用对Index=0的情况进行特殊处理
+        // 因为有虚拟头节点，所以不用对 Index=0 的情况进行特殊处理
         ListNode prev = head;
         for (int i = 0; i < index; i++) {
             prev = prev.next;
@@ -99,7 +99,7 @@ class MyLinkedList {
     }
 }
 
-// 双向链表(要随时注意一个类中包含前后「指针」)
+// 双向链表（要随时注意一个类中包含前后「指针」）
 class ListNode{
     int val;
     ListNode next,prev;
@@ -134,13 +134,13 @@ class MyLinkedList {
 
         // 判断从哪一边遍历时间更短
         if (index >= size>>1) {
-            // 从tail开始
+            // 从 tail 开始
             cur = tail;
             for (int i = 0; i < size - index; i++) {
                 cur = cur.prev;
             }
         } else {
-            // 从head开始
+            // 从 head 开始
             cur = head;
             for (int j = 0; j <= index; j++) {
                 cur = cur.next;
@@ -179,7 +179,7 @@ class MyLinkedList {
     }
     
     public void deleteAtIndex(int index) {
-        //判断索引是否有效
+        // 判断索引是否有效
         if (index < 0 || index >= size) {
             return;
         }
@@ -190,7 +190,7 @@ class MyLinkedList {
             pre = pre.next;
         }
 
-        // 删除index处的节点
+        // 删除 index 处的节点
         ListNode toDelete = pre.next;
         pre.next = toDelete.next;
         toDelete.next.prev = pre;

@@ -46,7 +46,7 @@ class Solution {
         ListNode temp = null;
         temp = cur.next;// 先保存下一个节点
         cur.next = prev;// 反转
-        // 更新prev、cur位置
+        // 更新 prev、cur 位置
         // prev = cur;
         // cur = temp;
         return reverse(cur, temp);

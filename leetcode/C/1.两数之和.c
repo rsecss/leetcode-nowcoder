@@ -8,27 +8,27 @@
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
-int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
+int *twoSum(int *nums, int numsSize, int target, int *returnSize)
+{
     int i = 0;
     int j = 0;
-    int* ret = malloc(sizeof(int)*2);
+    int *ret = malloc(sizeof(int) * 2);
 
-    for(i=0; i<numsSize;i++)
+    for (i = 0; i < numsSize; i++)
     {
-        for(j=i+1; j<numsSize;j++)
+        for (j = i + 1; j < numsSize; j++)
         {
-            if(nums[i]+nums[j] == target)
+            if (nums[i] + nums[j] == target)
             {
                 ret[0] = i;
                 ret[1] = j;
-                *returnSize = 2;//返回数组长度
+                *returnSize = 2; // 返回数组长度
                 return ret;
             }
         }
     }
-    //如果没有找到
+    // 如果没有找到
     *returnSize = 0;
     return ret;
 }
 // @lc code=end
-

@@ -12,13 +12,14 @@
  *     struct ListNode *next;
  * };
  */
-struct ListNode* removeElements(struct ListNode* head, int val) {
-    struct ListNode* prev =NULL,*cur =head;
-    while(cur)
+struct ListNode *removeElements(struct ListNode *head, int val)
+{
+    struct ListNode *prev = NULL, *cur = head;
+    while (cur)
     {
-        if(cur->val == val)
+        if (cur->val == val)
         {
-            if(cur == head)
+            if (cur == head)
             {
                 head = cur->next;
                 free(cur);
@@ -26,23 +27,19 @@ struct ListNode* removeElements(struct ListNode* head, int val) {
             }
             else
             {
-                //删除
-                prev->next =cur->next;
+                // 删除
+                prev->next = cur->next;
                 free(cur);
                 cur = prev->next;
             }
-          
-            
         }
         else
         {
-            //迭代往后走
+            // 迭代往后走
             prev = cur;
-            cur=cur->next;
+            cur = cur->next;
         }
     }
-  return head;
-    
+    return head;
 }
 // @lc code=end
-

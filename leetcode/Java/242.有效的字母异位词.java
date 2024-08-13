@@ -18,7 +18,7 @@ class Solution {
             record[t.charAt(i) - 'a']--; 
         }
 
-        for (int count: record) { // record数组如果有的元素不为零0，说明字符串s和t 一定是谁多了字符或者谁少了字符
+        for (int count: record) { // record数组如果有的元素不为 0，说明字符串 s 和 t 一定是谁多了字符或者谁少了字符
             if (count != 0) {
                 return false;
             }

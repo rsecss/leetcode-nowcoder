@@ -17,7 +17,7 @@
  * }
  */
 
-// 法二: 先移动链表，后同步移动
+// 法一：先移动链表，后同步移动
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode curA = headA;
@@ -25,13 +25,13 @@ public class Solution {
         int lengthA = 0;
         int lengthB = 0;
 
-        // 求链表A的长度
+        // 求链表 A 的长度
         while (curA != null) {
             curA = curA.next;
             lengthA++;
         }
 
-        // 求链表B的长度
+        // 求链表 B 的长度
         while (curB != null) {
             curB = curB.next;
             lengthB++;
@@ -61,7 +61,7 @@ public class Solution {
             gap--;
         }
 
-        // 遍历curA 和 curB，遇到相同则直接返回
+        // 遍历 curA 和 curB，遇到相同则直接返回
         while (curA != null) {
             if (curA == curB) {
                 return curA;
@@ -73,7 +73,7 @@ public class Solution {
     }
 }
 
-// 法二: 合并链表并同步移动(感觉不容易想到)
+// 法二：合并链表并同步移动（感觉不容易想到）
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode curA = headA ;
