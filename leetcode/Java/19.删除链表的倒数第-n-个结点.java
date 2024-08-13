@@ -26,7 +26,7 @@ class Solution {
         ListNode fastIndex = dummyNode;
         ListNode slowIndex = dummyNode;
 
-        // 只要快慢指针相差n个节点即可
+        // 只要快慢指针相差 n 个节点即可
         // 让快指针先走 n + 1 步的原因是为了确保当快指针到达链表的末尾时，慢指针正好在目标节点的前一个位置
         for (int i = 0; i <= n; i++) {
             fastIndex =fastIndex.next;

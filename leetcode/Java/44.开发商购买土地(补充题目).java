@@ -36,7 +36,7 @@ public class Main {
 
         int countCol = 0; // 统计遍历过的列
 
-        //纵向切分
+        // 纵向切分
         for (int j = 0; j < m; j++) {
             for (int i = 0; i < n; i++) {
                 countCol += vec[i][j];

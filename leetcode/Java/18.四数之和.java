@@ -30,7 +30,7 @@ class Solution {
                 int left = j + 1;
                 int right = nums.length - 1;
                 while (left < right) {
-                    // nums[i] + nums[j] + nums[left] + nums[right] > target int 会溢出,所以这里要强制转换成 long 
+                    // nums[i] + nums[j] + nums[left] + nums[right] > target int 会溢出，所以这里要强制转换成 long 
                     long sum = (long) nums[i] + nums[j] + nums[left] + nums[right];
                     if (sum < target) {
                         left++;

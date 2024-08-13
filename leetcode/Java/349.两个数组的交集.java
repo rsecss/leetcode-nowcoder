@@ -46,7 +46,7 @@ class Solution {
         Set<Integer> set1 = new HashSet<>();
         Set<Integer> set2 = new HashSet<>();
         
-        /* 遍历数组1和数组2 */
+        /* 遍历数组 1 和数组 2 */
         for (int i : nums1) {
             set1.add(i);
         }
@@ -56,7 +56,7 @@ class Solution {
             }
         }
 
-        // 重新申请一个数组存放set2中的元素，然后返回
+        // 重新申请一个数组存放 set2 中的元素，然后返回
         int[] arr = new int[set2.size()];
         int index = 0;
         for (int i : set2) {

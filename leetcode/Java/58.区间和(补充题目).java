@@ -23,7 +23,7 @@ public class Main {
             if (a == 0) {
                 sum = newArray[b];
             } else {
-                sum = newArray[b] - newArray[a - 1]; // 这里注意下标问题，a~b 的和，那么下标就是 b——>a-1
+                sum = newArray[b] - newArray[a - 1]; // 这里注意下标问题，a~b 的和，那么下标就是 b—>a-1
             }
             System.out.println(sum);
         }

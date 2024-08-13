@@ -12,14 +12,15 @@
  *     struct ListNode *next;
  * };
  */
-struct ListNode* reverseList(struct ListNode* head) {
-   /*翻转指针
-    //判断链表是否为空
+struct ListNode *reverseList(struct ListNode *head)
+{
+    /* 翻转指针法
+     // 判断链表是否为空
     if(head == NULL)
     {
         return NULL;
     }
-    
+
     struct ListNode* n1,*n2,*n3;
     n1=NULL;
     n2=head;
@@ -39,26 +40,24 @@ struct ListNode* reverseList(struct ListNode* head) {
         }
     }
     return n1;
-    */
+     */
 
-   /*头插：取原链表中节点，头插到newhead新链表中*/
-   struct ListNode*cur =head;
-   struct ListNode*newhead = NULL;
+    /* 头插：取原链表中节点，头插到 newhead 新链表中 */
+    struct ListNode *cur = head;
+    struct ListNode *newhead = NULL;
 
-   while(cur)
-   {
-    struct ListNode*next = cur->next;
+    while (cur)
+    {
+        struct ListNode *next = cur->next;
 
-    //头插
-    cur->next = newhead;
-    newhead = cur;
+        // 头插
+        cur->next = newhead;
+        newhead = cur;
 
-    //迭代往后走
-    cur = next;
-   }
+        // 迭代往后走
+        cur = next;
+    }
 
-   return newhead;
-
+    return newhead;
 }
 // @lc code=end
-

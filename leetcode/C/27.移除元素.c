@@ -5,12 +5,13 @@
  */
 
 // @lc code=start
-int removeElement(int* nums, int numsSize, int val) {
+int removeElement(int *nums, int numsSize, int val)
+{
     int source = 0;
     int destination = 0;
-    while(source < numsSize)
+    while (source < numsSize)
     {
-        if(nums[source] != val)
+        if (nums[source] != val)
         {
             nums[destination] = nums[source];
             destination++;
@@ -25,4 +26,3 @@ int removeElement(int* nums, int numsSize, int val) {
     return destination;
 }
 // @lc code=end
-

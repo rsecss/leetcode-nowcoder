@@ -11,7 +11,7 @@ class Solution {
         int startX = 0, startY = 0; // 设置每一圈的起点
         int count = 1; // 矩阵中填写的数字
         int loop = 1; // 记录圈数
-        int row,col; // row:行，col:列
+        int row,col; // row：行，col：列
         int offSet = 1; // 偏移量
 
         // 统一左闭右开

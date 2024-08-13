@@ -1,10 +1,10 @@
 # 代码随想录
 
-推荐题目转载自: [@代码随想录](https://www.programmercarl.com)
+推荐题目转载自：[@代码随想录](https://www.programmercarl.com)
 
 ## 刷题记录
 
-说明: 补充题目不是来自leetcode，而是来自代码随想录推荐
+说明: 补充题目不是来自 leetcode，而是来自代码随想录推荐
 
 ### 数组
 

@@ -13,7 +13,7 @@ class Solution {
         int[] result = new int[nums.length];
         int index = result.length - 1;
         while (left <= right) {
-            // 正数的相对位置是不变的， 需要调整的是负数平方后的相对位置
+            // 正数的相对位置是不变的，需要调整的是负数平方后的相对位置
             if (nums[left] * nums[left] > nums[right] * nums[right]) {
                 result[index] = nums[left] * nums[left];
                 index--;

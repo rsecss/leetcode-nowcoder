@@ -15,13 +15,13 @@ class Solution {
 
         Map<Integer,Integer> map = new HashMap<>(); // 创建一个hashmap
         for (int i = 0; i < nums.length; i++) {
-            int temp = target - nums[i]; // 遍历当前元素，并在map中寻找是否有匹配的key
+            int temp = target - nums[i]; // 遍历当前元素，并在 map 中寻找是否有匹配的 key
             if (map.containsKey(temp)) {
-                res[0] = map.get(temp); // 查找temp(key 值)
+                res[0] = map.get(temp); // 查找 temp（key 值）
                 res[1] = i; // value
                 break;
             }
-            map.put(nums[i],i); // 如果没找到匹配对，就把访问过的元素和下标加入到map中
+            map.put(nums[i],i); // 如果没找到匹配对，就把访问过的元素和下标加入到 map 中
         }
         return res;
     }
