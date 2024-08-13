@@ -35,6 +35,7 @@
 5. [454. 四数相加-ii](leetcode\Java\454.四数相加-ii.java)
 6. [383. 赎金信](leetcode\Java\383.赎金信.java)
 7. [15. 三数之和](leetcode\Java\15.三数之和.java)
+8. [18. 四数之和](leetcode\Java\18.四数之和.java)
 
 ### 字符串
 
