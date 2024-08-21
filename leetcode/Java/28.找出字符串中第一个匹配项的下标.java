@@ -6,37 +6,37 @@
 
 // @lc code=start
 // 法一：暴力求解，时间复杂度 O(n * m)
-// class Solution {
-//     public int strStr(String haystack, String needle) {
-//         if (needle.length() == 0) {
-//             return 0;
-//         }
-//         // 获取 haystack（文本串） 和 needle（模式串） 的长度
-//         int n = haystack.length();
-//         int m = needle.length();
-//         // 将字符串转化成字符数组
-//         char[] s = haystack.toCharArray();
-//         char[] p = needle.toCharArray(); 
+class Solution {
+    public int strStr(String haystack, String needle) {
+        if (needle.length() == 0) {
+            return 0;
+        }
+        // 获取 haystack（文本串） 和 needle（模式串） 的长度
+        int n = haystack.length();
+        int m = needle.length();
+        // 将字符串转化成字符数组
+        char[] s = haystack.toCharArray();
+        char[] p = needle.toCharArray(); 
 
-//         // 遍历 haystack 字符串
-//         for (int i = 0; i < n - m + 1; i++) {
-//             // 初始化匹配指针
-//             int a = i;
-//             int b = 0;
-//             // 循环检查
-//             while (b < m && s[a] == p[b]) {
-//                 a++;
-//                 b++;
-//             }
-//             // 如果 b 等于 m，说明 needle 已经完全匹配，返回当前位置 i
-//             if (b == m) {
-//                 return i;
-//             }
-//         }
-//         // 如果遍历完毕仍未找到匹配的子串，则返回 -1
-//         return -1;
-//     }
-// }
+        // 遍历 haystack 字符串
+        for (int i = 0; i < n - m + 1; i++) {
+            // 初始化匹配指针
+            int a = i;
+            int b = 0;
+            // 循环检查
+            while (b < m && s[a] == p[b]) {
+                a++;
+                b++;
+            }
+            // 如果 b 等于 m，说明 needle 已经完全匹配，返回当前位置 i
+            if (b == m) {
+                return i;
+            }
+        }
+        // 如果遍历完毕仍未找到匹配的子串，则返回 -1
+        return -1;
+    }
+}
 
 // 法二：KMP 算法——前缀表（不减一）——感觉真不好理解
 class Solution {
@@ -81,11 +81,11 @@ class Solution {
     }
 }
 
-// 法三：秒了
-// class Solution {
-//     public int strStr(String haystack, String needle) {
-//         return haystack.indexOf(needle);
-//     }
-// }
+法三：秒了
+class Solution {
+    public int strStr(String haystack, String needle) {
+        return haystack.indexOf(needle);
+    }
+}
 // @lc code=end
 
