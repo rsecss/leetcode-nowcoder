@@ -64,6 +64,7 @@
 
 1. [232. 用栈实现队列](leetcode\Java\232.用栈实现队列.java)
 2. [225. 用队列实现栈](leetcode\Java\225.用队列实现栈.java)
+3. [20. 有效的括号](leetcode\Java\20.有效的括号.java)
 
 ### 二叉树
 
