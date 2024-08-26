@@ -26,5 +26,28 @@ class Solution {
         return str;
     }
 }
+
+// 双指针
+class Solution {
+    public String removeDuplicates(String s) {
+        char[] ch = s.toCharArray();
+        int fast = 0;
+        int slow = 0;
+        while (fast < s.length()) {
+            // 直接用 fast 指针覆盖 slow 指针的值
+            ch[slow] = ch[fast]; 
+            // 遇到前相同的值，即 slow吗指针后退一步
+            if (slow > 0 && ch[slow] == ch[slow - 1]) {
+                slow--;
+            } else {
+                slow++;  
+            }
+            fast++;
+        }
+
+        return new String(ch, 0, slow);
+    }
+}
+
 // @lc code=end
 
