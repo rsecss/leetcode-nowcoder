@@ -39,5 +39,29 @@ class Solution {
         result.add(root.val); // 注意这里
     }
 }
+
+// 前序遍历（左右根），入栈顺序：根左右，然后翻转——迭代
+class Solution {
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            result.add(node.val);
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+        }
+        Collections.reverse(result);
+        return result;
+    }
+}
 // @lc code=end
 
