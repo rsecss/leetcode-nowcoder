@@ -8,7 +8,7 @@
 
 ### 数组
 
-1. [704. 二分查找](leetcode\Java\704.二分查找.java)
+1. [704. 二分查找](leetcode/Java/704.二分查找.java)
 2. [27. 移除元素](leetcode\Java\27.移除元素.java)
 3. [977. 有序数组的平方](leetcode\Java\977.有序数组的平方.java)
 4. [209. 长度最小的子数组](leetcode\Java\209.长度最小的子数组.java)
@@ -76,6 +76,7 @@
 2. [94. 二叉树的中序遍历](leetcode\Java\94.二叉树的中序遍历.java)
 3. [145. 二叉树的后序遍历](leetcode\Java\145.二叉树的后序遍历.java)
 4. [102. 二叉树的层序遍历](leetcode\Java\102.二叉树的层序遍历.java)
+5. [226. 翻转二叉树](leetcode\Java\226.翻转二叉树.java)
 
 ### 回溯算法
 
