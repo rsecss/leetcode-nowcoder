@@ -22,32 +22,32 @@
  */
 
 // 迭代法
-// class Solution {
-//     public TreeNode insertIntoBST(TreeNode root, int val) {
-//         if (root == null) {
-//             return new TreeNode(val);
-//         }
-//         TreeNode newRoot = root;
-//         TreeNode pre = root;
-//         // 遍历二叉树
-//         while (root != null) {
-//             pre = root; // 更新 pre 为当前的 root
-//             if (root.val > val) {
-//                 root = root.left;
-//             } else if (root.val < val) {
-//                 root = root.right;
-//             }
-//         }
-//         // 插入二叉树
-//         if (pre.val > val) {
-//             pre.left = new TreeNode(val);
-//         } else {
-//             pre.right = new TreeNode(val);
-//         }
+class Solution {
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+        if (root == null) {
+            return new TreeNode(val);
+        }
+        TreeNode newRoot = root;
+        TreeNode pre = root;
+        // 遍历二叉树
+        while (root != null) {
+            pre = root; // 更新 pre 为当前的 root
+            if (root.val > val) {
+                root = root.left;
+            } else if (root.val < val) {
+                root = root.right;
+            }
+        }
+        // 插入二叉树
+        if (pre.val > val) {
+            pre.left = new TreeNode(val);
+        } else {
+            pre.right = new TreeNode(val);
+        }
 
-//         return newRoot;
-//     }
-// }
+        return newRoot;
+    }
+}
 
 // 递归法
 class Solution {
