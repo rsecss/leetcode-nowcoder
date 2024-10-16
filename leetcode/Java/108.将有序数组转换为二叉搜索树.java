@@ -22,28 +22,28 @@
  */
 
 // 递归法
-// class Solution {
-//     public TreeNode sortedArrayToBST(int[] nums) {
-//         TreeNode root = traversal(nums, 0, nums.length - 1);
+class Solution {
+    public TreeNode sortedArrayToBST(int[] nums) {
+        TreeNode root = traversal(nums, 0, nums.length - 1);
 
-//         return root;
-//     }
+        return root;
+    }
 
-//     // 左闭右闭区间 [left, right]
-//     private TreeNode traversal(int[] nums, int left, int right) {
-//         if (left > right) {
-//             return null;
-//         }
+    // 左闭右闭区间 [left, right]
+    private TreeNode traversal(int[] nums, int left, int right) {
+        if (left > right) {
+            return null;
+        }
 
-//         int middle = left + ((right - left) >> 1);
-//         TreeNode root = new TreeNode(nums[middle]);
+        int middle = left + ((right - left) >> 1);
+        TreeNode root = new TreeNode(nums[middle]);
 
-//         root.left = traversal(nums, left, middle - 1);
-//         root.right = traversal(nums, middle + 1, right);
+        root.left = traversal(nums, left, middle - 1);
+        root.right = traversal(nums, middle + 1, right);
         
-//         return root;
-//     }
-// }
+        return root;
+    }
+}
 
 // 迭代法
 class Solution {
